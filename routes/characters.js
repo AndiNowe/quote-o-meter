@@ -74,11 +74,11 @@ router.get("/:id", async (req, res) => {
 // POST a game
 router.post("/", async (req, res) => {
   
-  let { id, player, charname, race, charclass, description, games_id  } = req.body;
+  let { player, charname, race, charclass, description, games_id  } = req.body;
   
   let sql = `
-    INSERT INTO characters (id, player, charname, race, charclass, description, games_id)
-    VALUES ('${id}', '${player}', '${charname}', '${race}', '${charclass}', '${description}', '${games_id}'  )
+    INSERT INTO characters ( player, charname, race, charclass, description, games_id)
+    VALUES ('${player}', '${charname}', '${race}', '${charclass}', '${description}', '${games_id}'  )
   `;
   
   try {
