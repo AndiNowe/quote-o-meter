@@ -74,7 +74,7 @@ router.get("/:id", async (req, res) => {
   try {
 
     let results = await db(sql);
-    //returns obj and not the array for items, results.data is array, we want the index of [0]
+   
     res.send(results.data[0]);
 
   } catch (err) {
@@ -83,7 +83,7 @@ router.get("/:id", async (req, res) => {
 });
 
 
-// POST a game
+// POST a quote
 router.post("/", async (req, res) => {
   
   let { quote, games_id } = req.body;
