@@ -9,7 +9,7 @@ var logger = require("morgan");
 
 var gamesRouter = require('./routes/games');
 var quotesRouter = require('./routes/quotes');
-//var charactersRouter = require('./routes/characters');
+var charactersRouter = require('./routes/characters');
 
 var app = express();
 
@@ -28,7 +28,7 @@ app.get("/", function(req, res, next) {
 
 app.use("/games", gamesRouter);
 app.use("/quotes", quotesRouter);
-//app.use("/characters", charactersRouter);
+app.use("/characters", charactersRouter);
 
 // Anything that doesn't match the above, send back index.html
 app.get("*", (req, res) => {

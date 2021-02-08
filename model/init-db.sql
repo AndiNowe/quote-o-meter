@@ -22,7 +22,7 @@ CREATE TABLE characters (
     player VARCHAR(100) NOT NULL,
     charname VARCHAR(100) NOT NULL,
     race VARCHAR(100),
-    class VARCHAR(100),
+    charclass VARCHAR(100),
     description TEXT,
     games_id INT NOT NULL,
     FOREIGN KEY(games_id) REFERENCES games(id) ON DELETE CASCADE
