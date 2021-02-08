@@ -130,7 +130,7 @@ router.delete("/:id", async (req, res) => {
 
     } else {
       // else task not found; return 404 status code, does not exist in table "games"
-      res.status(404).send({ error: "This games does not exist. " });
+      res.status(404).send({ error: "This game does not exist. " });
     }
   
   } catch (err) {
