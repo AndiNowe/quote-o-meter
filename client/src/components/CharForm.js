@@ -1,0 +1,112 @@
+import React, { useState } from "react";
+// import "./CharForm.css";
+
+function CharForm(props) {
+  const [player, setPlayer] = useState("");
+  const [charname, setCharname] = useState("");
+  const [race, setRace] = useState("");
+  const [charclass, setCharclass] = useState("");
+  const [description, setDescription] = useState("");
+
+  function handleChange(event) {
+    let { name, value } = event.target;
+
+    switch (name) {
+      case "player":
+        setPlayer(value);
+        break;
+      case "charname":
+        setCharname(value);
+        break;
+      case "race":
+        setRace(value);
+        break;
+      case "charclass":
+        setCharclass(value);
+        break;
+      case "description":
+        setDescription(value);
+        break;
+      default:
+        break;
+    }
+  }
+
+  function handleSubmit(event) {
+    event.preventDefault();
+
+    props.onSubmit(player, charname, race, charclass, description);
+
+    setPlayer("");
+    setCharname("");
+    setRace("");
+    setCharclass("");
+    setDescription("");
+  }
+
+  return (
+    <div className="CharForm">
+      <h2>Create your character</h2>
+
+      <form onSubmit={handleSubmit}>
+        <label>
+          Who's the player?
+          <br></br>
+          <input
+            name="player"
+            type="text"
+            value={player}
+            onChange={handleChange}
+          />
+        </label>
+
+        <label>
+          Name of the character:
+          <br></br>
+          <input
+            name="charname"
+            type="text"
+            value={charname}
+            onChange={handleChange}
+          />
+        </label>
+        <label>
+          Are they an elf? Dwarf? Vampire?
+          <br></br>
+          <input
+            name="race"
+            type="text"
+            value={race}
+            onChange={handleChange}
+          />
+        </label>
+
+        <label>
+          What class did you pick?
+          <br></br>
+          <input
+            name="charclass"
+            type="text"
+            value={charclass}
+            onChange={handleChange}
+          />
+        </label>
+
+        <label>
+          Short description:
+          <br></br>
+          <input
+            name="description"
+            type="text"
+            value={description}
+            onChange={handleChange}
+          />
+        </label>
+
+        <button type="submit">Submit</button>
+      </form>
+    </div>
+  );
+}
+
+export default CharForm;
