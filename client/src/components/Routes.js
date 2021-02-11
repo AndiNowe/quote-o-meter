@@ -7,6 +7,8 @@ import GameForm from './GameForm';
 import CharForm from './CharForm';
 import QuoteForm from './QuoteForm';
 import Error404View from './Error404View';
+import GamesView from './GamesView';
+import QuoteAndCharView from './QuoteAndCharView';
 
 
 
@@ -31,6 +33,16 @@ function Routes(props) {
             {/* QuoteForm */}
             <Route path="/quote_form">
                 <QuoteForm />
+            </Route>
+
+             {/* Games list */}
+             <Route path="/games">
+                <GamesView />
+            </Route>
+
+             {/* Inside a Game */}
+             <Route path="/quoteandchar">
+                <QuoteAndCharView />
             </Route>
     
             {/* UserProfile: The easy way 
