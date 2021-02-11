@@ -51,7 +51,6 @@ function CharForm(props) {
       <form onSubmit={handleSubmit}>
         <label>
           Who's the player?
-          <br></br>
           <input
             name="player"
             type="text"
@@ -62,7 +61,6 @@ function CharForm(props) {
 
         <label>
           Name of the character:
-          <br></br>
           <input
             name="charname"
             type="text"
@@ -72,7 +70,6 @@ function CharForm(props) {
         </label>
         <label>
           Are they an elf? Dwarf? Vampire?
-          <br></br>
           <input
             name="race"
             type="text"
@@ -83,7 +80,6 @@ function CharForm(props) {
 
         <label>
           What class did you pick?
-          <br></br>
           <input
             name="charclass"
             type="text"
@@ -94,8 +90,7 @@ function CharForm(props) {
 
         <label>
           Short description:
-          <br></br>
-          <input
+          <textarea
             name="description"
             type="text"
             value={description}

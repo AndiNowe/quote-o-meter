@@ -4,7 +4,7 @@ import React, { useState } from "react";
 function GameForm(props) {
   const [name, setName] = useState("");
   const [universe, setUniverse] = useState("");
-  const [date, setDate] = useState("");
+  const [date, setDate] = useState(null);
 
   function handleChange(event) {
     let { name, value } = event.target;
@@ -41,7 +41,6 @@ function GameForm(props) {
       <form onSubmit={handleSubmit}>
         <label>
           Name of the adventure
-          <br></br>
           <input
             name="name"
             type="text"
@@ -52,7 +51,6 @@ function GameForm(props) {
 
         <label>
           Universe or system
-          <br></br>
           <input
             name="universe"
             type="text"
@@ -63,7 +61,6 @@ function GameForm(props) {
 
         <label>
           Date
-          <br></br>
           <input
             name="date"
             type="date"

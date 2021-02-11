@@ -26,7 +26,7 @@ function QuoteForm(props) {
         <label>
           Quote:
           <br></br>
-          <input
+          <textarea
             name="quote"
             type="text"
             value={quote}
