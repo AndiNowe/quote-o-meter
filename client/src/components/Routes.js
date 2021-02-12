@@ -22,7 +22,9 @@ function Routes(props) {
     
             {/* GameForm */}
             <Route path="/game_form">
-                <GameForm />
+                <GameForm 
+                onAddGame={(name, universe, date) => props.onAddGame(name, universe, date)}
+                />
             </Route>
     
             {/* CharForm */}
@@ -37,7 +39,7 @@ function Routes(props) {
 
              {/* Games list */}
              <Route path="/games">
-                <GamesView />
+                <GamesView games={props.games}/>
             </Route>
 
              {/* Inside a Game */}
