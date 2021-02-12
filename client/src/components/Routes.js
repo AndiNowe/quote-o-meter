@@ -39,7 +39,10 @@ function Routes(props) {
 
              {/* Games list */}
              <Route path="/games">
-                <GamesView games={props.games}/>
+                <GamesView 
+                games={props.games}
+                onDelete={id => props.onDelete(id)}
+                />
             </Route>
 
              {/* Inside a Game */}

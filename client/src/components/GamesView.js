@@ -20,6 +20,14 @@ function GamesView(props) {
                       Universe: {g.universe}
                       Date: {g.date}
 
+                      <button  
+                        type="button"
+                        onClick={() => props.onDelete(g.id)}
+                      >
+                      Delete
+                      </button> 
+
+
                     </li>
                     )
                 )

@@ -48,6 +48,22 @@ function App() {
   }
 
 
+  function deleteGame(id) {
+    let options = {
+      method: "DELETE",
+      body: JSON.stringify(games)
+    };
+
+    fetch(`/games/${id}`, options)
+      .then(result => result.json())
+      .then(games => {
+        setGames(games);
+      })
+      .catch(err => {
+        console.log({ error: err.message });
+      });
+  }
+
 
 
   return (
@@ -57,6 +73,7 @@ function App() {
 
     <Routes 
     onAddGame={(name, universe, date) => addGame(name, universe, date)}
+    onDelete={id => deleteGame(id)}
     games = {games}
     
     
