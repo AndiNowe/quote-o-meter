@@ -71,6 +71,28 @@ router.get("/:id", async (req, res) => {
 });
 
 
+//GET data by Game ID
+router.get("/game_id/:id", async (req, res) => {
+  
+  let id = req.params.id;
+
+  let sql = `
+    SELECT *
+    FROM characters
+    WHERE games_id = ${id}
+  `;
+
+  try {
+
+    let results = await db(sql);
+    //returns obj and not the array for items, results.data is array, we want the index of [0]
+    res.send(results.data);
+
+  } catch (err) {
+    res.status(500).send({ error: err.message });
+  }
+});
+
 // POST a game
 router.post("/", async (req, res) => {
   

@@ -23,7 +23,7 @@ function Routes(props) {
             {/* GameForm */}
             <Route path="/game_form">
                 <GameForm 
-                onAddGame={(name, universe, date) => props.onAddGame(name, universe, date)}
+               
                 />
             </Route>
     
@@ -39,10 +39,7 @@ function Routes(props) {
 
              {/* Games list */}
              <Route path="/games">
-                <GamesView 
-                games={props.games}
-                onDelete={id => props.onDelete(id)}
-                />
+                <GamesView />
             </Route>
 
              {/* Inside a Game */}

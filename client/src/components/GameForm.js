@@ -6,6 +6,7 @@ function GameForm(props) {
   const [universe, setUniverse] = useState("");
   const [date, setDate] = useState("");
 
+
   function handleChange(event) {
     let { name, value } = event.target;
 
@@ -26,14 +27,27 @@ function GameForm(props) {
 
   function handleSubmit(event) {
     event.preventDefault();
-    
-    console.log(name, universe, date);
 
-    props.onAddGame(name, universe, date);
+    addGame(name, universe, date);
 
     setName("");
     setUniverse("");
     setDate("");
+  }
+
+
+  function addGame(name, universe, date) {
+    let newGame = { name, universe, date };
+    let options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newGame)
+    };
+
+    fetch("/games", options)
+      .catch(err => {
+        console.log("error!", err.message);
+      });
   }
 
   return (

@@ -1,6 +1,46 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 
-function GamesView(props) {
+function GamesView() {
+
+
+  let [games, setGames] = useState([]);
+  
+  // INITAL FETCH WORKING
+  useEffect(() => {
+    /**
+     * Using .then/.catch in useEffect()
+     **/
+
+    fetch('/games')
+        .then(result => result.json())
+        .then(games => {
+          setGames(games);
+        })
+        .catch(err => {
+            console.log(`Error: ${err.message}`);
+        });
+  }, []);
+
+
+  
+  function deleteGame(id) {
+    let options = {
+      method: "DELETE",
+      body: JSON.stringify(games)
+    };
+
+    fetch(`/games/${id}`, options)
+      .then(result => result.json())
+      .then(games => {
+        setGames(games);
+      })
+      .catch(err => {
+        console.log({ error: err.message });
+      });
+  }
+
+
+
     return (
       <div className="Games">
    
@@ -9,8 +49,8 @@ function GamesView(props) {
        {/* ".map()" won't render until "games" has value */}
 
        <ul>
-         {props.games &&
-                props.games.map(g => (
+         {games &&
+                games.map(g => (
                     <li 
                       className="games"
                       key={g.id}
@@ -22,7 +62,7 @@ function GamesView(props) {
 
                       <button  
                         type="button"
-                        onClick={() => props.onDelete(g.id)}
+                        onClick={() => deleteGame(g.id)}
                       >
                       Delete
                       </button> 
