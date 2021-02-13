@@ -49,6 +49,15 @@ function GamesView(props) {
 
     return (
       <div className="Games">
+
+        <Link to="/game_form">
+            <button  
+              type="button"
+            >
+            Create a new game
+            </button> 
+        </Link>
+
    
       <h3>List of Games</h3>
 
