@@ -23,19 +23,17 @@ function Routes(props) {
     
             {/* GameForm */}
             <Route path="/game_form">
-                <GameForm 
-               
-                />
+                <GameForm />
             </Route>
     
             {/* CharForm */}
             <Route path="/character_form">
-                <CharForm />
+                <CharForm game = {props.game}/>
             </Route>
 
             {/* QuoteForm */}
             <Route path="/quote_form">
-                <QuoteForm />
+                <QuoteForm game = {props.game}/>
             </Route>
 
              {/* Games list */}

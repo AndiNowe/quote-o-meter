@@ -90,6 +90,22 @@ function QuoteAndChar(props) {
 
     return (
       <div className="QuoteAndChar">
+
+        <Link to="/quote_form">
+            <button  
+              type="button"
+            >
+            Create a new quote
+            </button> 
+        </Link>
+
+        <Link to="/character_form">
+            <button  
+              type="button"
+            >
+            Create a new character
+            </button> 
+        </Link>
    
    
       <h3>Inside a game</h3>

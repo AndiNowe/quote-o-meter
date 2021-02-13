@@ -8,6 +8,9 @@ function CharForm(props) {
   const [charclass, setCharclass] = useState("");
   const [description, setDescription] = useState("");
 
+
+  let games_id = props.game.id;
+
   function handleChange(event) {
     let { name, value } = event.target;
 
@@ -35,7 +38,7 @@ function CharForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    props.onSubmit(player, charname, race, charclass, description);
+    addCharacter(player, charname, race, charclass, description);
 
     setPlayer("");
     setCharname("");
@@ -43,6 +46,22 @@ function CharForm(props) {
     setCharclass("");
     setDescription("");
   }
+
+
+  function addCharacter(quote) {
+    let newCharacter = { player, charname, race, charclass, description, games_id };
+    let options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newCharacter)
+    };
+
+    fetch("/characters", options)
+      .catch(err => {
+        console.log("error!", err.message);
+      });
+  }
+
 
   return (
     <div className="CharForm">

@@ -4,6 +4,8 @@ import React, { useState } from "react";
 function QuoteForm(props) {
   const [quote, setquote] = useState("");
 
+  let games_id = props.game.id;
+
 
   function handleChange(event) {
     let {value} = event.target;
@@ -20,7 +22,7 @@ function QuoteForm(props) {
 
 
   function addQuote(quote) {
-    let newQuote = { quote };
+    let newQuote = { quote, games_id };
     let options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
