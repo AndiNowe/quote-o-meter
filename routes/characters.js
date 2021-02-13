@@ -85,7 +85,6 @@ router.get("/game_id/:id", async (req, res) => {
   try {
 
     let results = await db(sql);
-    //returns obj and not the array for items, results.data is array, we want the index of [0]
     res.send(results.data);
 
   } catch (err) {

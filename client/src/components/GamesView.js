@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
+import { Link, useParams } from 'react-router-dom';
 
-function GamesView() {
+function GamesView(props) {
 
 
   let [games, setGames] = useState([]);
@@ -41,6 +42,11 @@ function GamesView() {
 
 
 
+  function handleClick (g) {
+    props.getGame(g);
+  }
+
+
     return (
       <div className="Games">
    
@@ -66,6 +72,15 @@ function GamesView() {
                       >
                       Delete
                       </button> 
+
+                      <Link to="/quoteandchar">
+                      <button  
+                        type="button"
+                        onClick={() =>handleClick(g)}
+                      >
+                       Go to the game!
+                      </button> 
+                      </Link>
 
 
                     </li>

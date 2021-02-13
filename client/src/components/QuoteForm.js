@@ -13,9 +13,24 @@ function QuoteForm(props) {
   function handleSubmit(event) {
     event.preventDefault();
 
-    props.onSubmit(quote);
+    addQuote(quote);
 
     setquote("");
+  }
+
+
+  function addQuote(quote) {
+    let newQuote = { quote };
+    let options = {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(newQuote)
+    };
+
+    fetch("/quotes", options)
+      .catch(err => {
+        console.log("error!", err.message);
+      });
   }
 
   return (

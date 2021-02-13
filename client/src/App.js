@@ -8,8 +8,11 @@ function App() {
 
   //temporary testing
 
+  let [game, setGame] = useState([]);
 
-
+  function getGame2 (g) {
+    setGame(g);
+  }
 
 
 
@@ -19,7 +22,9 @@ function App() {
  
     <h1>Frasòmetre</h1>
 
-    <Routes /> 
+    <Routes onGetGame={(g) => getGame2(g)}
+    game = {game}
+    /> 
 
     </div>
   );

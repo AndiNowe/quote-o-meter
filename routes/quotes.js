@@ -30,10 +30,10 @@ router.use(bodyParser.json());
 
 //Get homepage
 
-router.get("/", (req, res) => {
-  //Once connected, expects a response with a message
-  res.send({ message: "Welcome to the QUOTE- O'BRIAN, quote edition" });
-});
+// router.get("/", (req, res) => {
+//   //Once connected, expects a response with a message
+//   res.send({ message: "Welcome to the QUOTE- O'BRIAN, quote edition" });
+// });
 
 //GET all data from games table
 router.get("/", async (req, res) => {
@@ -81,6 +81,29 @@ router.get("/:id", async (req, res) => {
     res.status(500).send({ error: err.message });
   }
 });
+
+
+//GET data by Game ID
+router.get("/game_id/:id", async (req, res) => {
+  
+  let id = req.params.id;
+
+  let sql = `
+    SELECT *
+    FROM quotes
+    WHERE games_id = ${id}
+  `;
+
+  try {
+
+    let results = await db(sql);
+    res.send(results.data);
+
+  } catch (err) {
+    res.status(500).send({ error: err.message });
+  }
+});
+
 
 
 // POST a quote
