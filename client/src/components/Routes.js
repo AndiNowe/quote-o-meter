@@ -28,12 +28,16 @@ function Routes(props) {
     
             {/* CharForm */}
             <Route path="/character_form">
-                <CharForm game = {props.game}/>
+                <CharForm game = {props.game}
+                getGame={(g) => props.onGetGame(g)}
+                />
             </Route>
 
             {/* QuoteForm */}
             <Route path="/quote_form">
-                <QuoteForm game = {props.game}/>
+                <QuoteForm 
+                game = {props.game} 
+                getGame={(g) => props.onGetGame(g)}/>
             </Route>
 
              {/* Games list */}

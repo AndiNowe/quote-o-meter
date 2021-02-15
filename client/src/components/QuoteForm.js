@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 // import "./QuoteForm.css";
+import { Link, useHistory } from 'react-router-dom';
 
 function QuoteForm(props) {
   const [quote, setquote] = useState("");
+  const history = useHistory();
 
   let games_id = props.game.id;
 
@@ -16,6 +18,8 @@ function QuoteForm(props) {
     event.preventDefault();
 
     addQuote(quote);
+    props.getGame(props.game);
+    history.push('/quoteandchar')
 
     setquote("");
   }
@@ -51,8 +55,13 @@ function QuoteForm(props) {
           />
         </label>
 
-        <button type="submit">Submit</button>
+        
+        <button 
+          type="submit"
+        >Submit</button>
+      
       </form>
+
     </div>
   );
 }

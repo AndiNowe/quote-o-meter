@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 // import "./CharForm.css";
+import { Link, useHistory } from 'react-router-dom';
+
 
 function CharForm(props) {
   const [player, setPlayer] = useState("");
@@ -7,6 +9,7 @@ function CharForm(props) {
   const [race, setRace] = useState("");
   const [charclass, setCharclass] = useState("");
   const [description, setDescription] = useState("");
+  const history = useHistory();
 
 
   let games_id = props.game.id;
@@ -40,6 +43,9 @@ function CharForm(props) {
 
     addCharacter(player, charname, race, charclass, description);
 
+    props.getGame(props.game);
+    history.push('/quoteandchar')
+
     setPlayer("");
     setCharname("");
     setRace("");
@@ -48,7 +54,7 @@ function CharForm(props) {
   }
 
 
-  function addCharacter(quote) {
+  function addCharacter(player, charname, race, charclass, description) {
     let newCharacter = { player, charname, race, charclass, description, games_id };
     let options = {
       method: "POST",

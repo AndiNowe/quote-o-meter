@@ -6,7 +6,6 @@ function GamesView(props) {
 
   let [games, setGames] = useState([]);
   
-  // INITAL FETCH WORKING
   useEffect(() => {
     /**
      * Using .then/.catch in useEffect()
