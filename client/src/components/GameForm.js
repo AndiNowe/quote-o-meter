@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 // import "./GameForm.css";
+import { Link, useHistory } from 'react-router-dom';
+
 
 function GameForm(props) {
   const [name, setName] = useState("");
   const [universe, setUniverse] = useState("");
   const [date, setDate] = useState("");
+  const history = useHistory();
 
 
   function handleChange(event) {
@@ -29,6 +32,8 @@ function GameForm(props) {
     event.preventDefault();
 
     addGame(name, universe, date);
+    props.getGame(props.game);
+    history.push('/games');
 
     setName("");
     setUniverse("");

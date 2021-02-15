@@ -44,7 +44,7 @@ function CharForm(props) {
     addCharacter(player, charname, race, charclass, description);
 
     props.getGame(props.game);
-    history.push('/quoteandchar')
+    history.push('/quoteandchar');
 
     setPlayer("");
     setCharname("");
