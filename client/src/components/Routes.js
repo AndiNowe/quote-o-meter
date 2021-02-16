@@ -13,7 +13,9 @@ import QuoteAndCharView from './QuoteAndCharView';
 
 
 function Routes(props) {
+    
 
+    
     return (
         <Switch>
             {/* Home: Use 'exact' or else this route will match EVERYTHING */}
@@ -47,12 +49,12 @@ function Routes(props) {
             </Route>
 
              {/* Inside a Game */}
-             <Route path="/quoteandchar">
+             <Route path={`/quoteandchar/${props.game.id}`}>
                 <QuoteAndCharView game = {props.game}/>
             </Route>
     
 
-            {/* <Route path='/game_id/:id(\d+)' render={(routeProps) => {
+            {/* <Route path='/quoteandchar/:id(\d+)' render={(routeProps) => {
                 // Get ID from URL param
                 let id = Number(routeProps.match.params.id);
                 // Find user with that ID

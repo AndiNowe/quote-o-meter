@@ -81,7 +81,7 @@ function GamesView(props) {
                       Delete
                       </button> 
 
-                      <Link to="/quoteandchar">
+                      <Link to={`/quoteandchar/${g.id}`}>
                       <button  
                         type="button"
                         onClick={() =>handleClick(g)}

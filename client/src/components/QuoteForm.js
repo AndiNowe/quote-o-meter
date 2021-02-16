@@ -19,7 +19,7 @@ function QuoteForm(props) {
 
     addQuote(quote);
     props.getGame(props.game);
-    history.push('/quoteandchar');
+    history.push(`/quoteandchar/${games_id}`);
 
     setquote("");
   }
