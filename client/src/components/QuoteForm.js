@@ -34,6 +34,7 @@ function QuoteForm(props) {
     };
 
     fetch("/quotes", options)
+     .then(result => result.json())
       .catch(err => {
         console.log("error!", err.message);
       });

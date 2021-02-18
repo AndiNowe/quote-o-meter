@@ -1,0 +1,36 @@
+.characters {
+    display : flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-bottom: 50px;
+}
+
+.quotes {
+    display : flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: center;
+    margin-bottom: 5px;
+}
+
+.button {
+    width: fit-content;  
+    margin: 0 auto;
+    display: block;
+}
+
+.createFormButtons {
+    display: flex;
+    justify-content: center;
+
+}
+
+.littleTitle {
+    display: flex;
+    justify-content: center;
+}
+
+.formButton {
+    margin: 5px;
+}
