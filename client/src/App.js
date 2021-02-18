@@ -1,5 +1,6 @@
 import './App.css';
 import React, { useEffect, useState } from "react";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Routes from './components/Routes';
 
