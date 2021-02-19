@@ -1,11 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import "./GamesView.css";
+
 
 function GamesView(props) {
 
 
   let [games, setGames] = useState([]);
+  const history = useHistory();
   
   useEffect(() => {
     /**
@@ -44,6 +46,8 @@ function GamesView(props) {
 
   function handleClick (g) {
     props.getGame(g);
+    history.push(`/quoteandchar/${g.id}`);
+    
   }
 
 
@@ -65,13 +69,17 @@ function GamesView(props) {
 
         {/* ".map()" won't render until "games" has value */}
 
+        
+
         <div className="games">
           {games &&
                   games.map(g => (
-                    <Link to={`/quoteandchar/${g.id}`}>
+                    // <Link to={`/quoteandchar/${g.id}`}>
                       <div 
                         key={g.id}
                         onClick={() =>handleClick(g)}
+                        className = "card"
+                        
                       >
 
                         <ul>Name: {" "+g.name}</ul> 
@@ -97,11 +105,14 @@ function GamesView(props) {
 
 
                       </div>
-                      </Link>
+                      // </Link>
                       )
                   )
               }   
         </div>
+
+        
+        
 
 
       </div>
