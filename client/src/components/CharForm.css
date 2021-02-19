@@ -1,0 +1,32 @@
+.Title {
+    display: flex;
+    justify-content: center;
+}
+
+.CharacterInputs {
+    text-align: center;
+    margin: 10px;
+  }
+
+.button {
+    width: fit-content;  
+    margin: 0 auto;
+    display: block;
+}
+
+label {
+    display:block;
+}
+
+input, textarea {
+    display: block;
+    margin: 0 auto 1em auto;
+  }
+  
+
+.CharacterText {
+    display: block;
+    width: 270px;
+    height: 90px;
+    margin: 0 auto 1em auto;
+}
