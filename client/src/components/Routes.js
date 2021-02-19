@@ -52,16 +52,14 @@ function Routes(props) {
              <Route path={`/quoteandchar/${props.game.id}`}>
                 <QuoteAndCharView game = {props.game}/>
             </Route>
-    
 
-            {/* <Route path='/quoteandchar/:id(\d+)' render={(routeProps) => {
-                // Get ID from URL param
+             {/* Inside a Game from the ID*/}
+            <Route path='/quoteandchar/:id(\d+)' render={(routeProps) => {
+
                 let id = Number(routeProps.match.params.id);
-                // Find user with that ID
-                let game = props.games.find(g => g.id === id);
-                // Return profile component with user passed as prop
-                return <QuoteAndCharView game={game} />
-            }} /> */}
+            
+                return <QuoteAndCharView gameId = {id} />
+            }} />
 
 
 

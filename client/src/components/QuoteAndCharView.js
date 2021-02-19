@@ -5,15 +5,24 @@ import "./QuoteAndCharView.css";
 
 function QuoteAndChar(props) {
 
-  console.log("props" + JSON.stringify(props));
+  // console.log("props" + JSON.stringify(props));
 
-  let gameId = props.game.id;
+  let gameId;
+
+  if (props.game == null) {
+    gameId = props.gameId;
+ 
+  } else {
+    gameId = props.game.id;
+  }
+  
   
   let [quotes, setQuotes] = useState([]);
   let [characters, setCharacters] = useState([]);
 
-  console.log("quotes" + JSON.stringify(quotes));
-  console.log("chars" + JSON.stringify(characters));
+
+  // console.log("quotes" + JSON.stringify(quotes));
+  // console.log("chars" + JSON.stringify(characters));
   
 
   function fetchQuotesByGameId(gameId) {
