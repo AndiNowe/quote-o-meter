@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import "./GameForm.css";
 import { Link, useHistory } from 'react-router-dom';
+import "./GameForm.css";
 
 
 function GameForm(props) {
@@ -56,11 +57,16 @@ function GameForm(props) {
   }
 
   return (
-    <div className="GameForm">
-      <h2>Start a game!</h2>
+    <div >
+      <h2 className="Title">Create a new game</h2>
 
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form 
+        className="GameForm"
+        onSubmit={handleSubmit}>
+
+        <label 
+        className = "FormInputs"
+        >
           Name of the adventure
           <input
             name="name"
@@ -70,7 +76,9 @@ function GameForm(props) {
           />
         </label>
 
-        <label>
+        <label
+        className = "FormInputs"
+        >
           Universe or system
           <input
             name="universe"
@@ -80,7 +88,9 @@ function GameForm(props) {
           />
         </label>
 
-        <label>
+        <label
+        className = "FormInputs"
+        >
           Date
           <input
             name="date"
@@ -90,7 +100,13 @@ function GameForm(props) {
           />
         </label>
 
-        <button type="submit">Submit</button>
+        <button 
+        type="submit"
+        className="button"
+        >
+          Submit
+        </button>
+
       </form>
     </div>
   );
