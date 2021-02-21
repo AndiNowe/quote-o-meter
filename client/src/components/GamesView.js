@@ -87,7 +87,7 @@ function GamesView(props) {
 
                         <ul>Name: {" "+g.name}</ul> 
                         <ul>Universe: {" "+g.universe}</ul>
-                        <ul>Date: {" "+g.date}</ul>
+                        <ul>Date: {" "+(new Date(g.date)).toLocaleDateString()}</ul>
 
                         <button  
                           className = "button"
