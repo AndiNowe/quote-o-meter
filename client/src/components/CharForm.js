@@ -72,7 +72,7 @@ function CharForm(props) {
 
   return (
     <div >
-      <h2 className="Title">Create your character</h2>
+      <h3 className="Title">Create your character</h3>
 
       <form 
       onSubmit={handleSubmit}
@@ -81,7 +81,7 @@ function CharForm(props) {
         <label
           className = "CharacterInputs"
         >
-          Who's the player?
+          <p>Who's the player?</p>
           <input
             name="player"
             type="text"
@@ -93,7 +93,7 @@ function CharForm(props) {
         <label
           className = "CharacterInputs"
         >
-          Name of the character:
+          <p>Name of the character:</p>
           <input
             name="charname"
             type="text"
@@ -105,7 +105,7 @@ function CharForm(props) {
         <label 
           className = "CharacterInputs"
         >
-          Are they an elf? Dwarf? Vampire?
+          <p>Are they an elf? Dwarf? Vampire?</p>
           <input
             name="race"
             type="text"
@@ -117,7 +117,7 @@ function CharForm(props) {
         <label 
           className = "CharacterInputs"
         >
-          What class did you pick?
+          <p>What class did you pick?</p>
           <input
             name="charclass"
             type="text"
@@ -129,7 +129,7 @@ function CharForm(props) {
         <label
           className = "CharacterInputs"
         >
-          Short description:
+          <p>Short description:</p>
           <textarea
             className ="CharacterText"
             name="description"
@@ -139,12 +139,15 @@ function CharForm(props) {
           />
         </label>
 
+        <div className="buttonDivChar">
         <button 
           type="submit"
           className="button"
+          className="rpgui-button rpgui-center"
         >
           Submit
         </button>
+        </div>
 
       </form>
 
