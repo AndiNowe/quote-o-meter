@@ -42,14 +42,14 @@ function QuoteForm(props) {
 
   return (
     <div>
-      <h2 className="Title">What did that scallywag say?!</h2>
+      <h3 className="Title">What did that scallywag say?!</h3>
 
       <form 
         onSubmit={handleSubmit}
         className="GameForm">
 
         <label className = "QuoteInput">
-          Quote:
+          <p>Quote:</p>
           <textarea
             className ="quoteText"
             name="quote"
@@ -59,11 +59,13 @@ function QuoteForm(props) {
           />
         </label>
 
-        
+        <div className="buttonDivQuote">
         <button 
           type="submit"
           className="button"
+          className="rpgui-button rpgui-center"
         >Submit</button>
+        </div>
       
       </form>
 
