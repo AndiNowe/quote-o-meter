@@ -111,7 +111,7 @@ inside your html file.
   padding-top: 5px;
   padding-left: 35px;
   padding-right: 35px;
-  overflow: visible; }
+  overflow: visible; } 
 
 /* button hover */
 .rpgui-button.golden.hover,
@@ -542,7 +542,7 @@ ul.rpgui-dropdown-imp {
   line-height: 32px;
   background: #4e4a4e;
   max-width: 100%;
-  width: 100%;
+  /* width: 100%; */
   padding-left: 10px;
   /* for ie */
   min-height: 30px;

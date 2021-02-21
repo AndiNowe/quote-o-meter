@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 // import "./GameForm.css";
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import "./GameForm.css";
 
 
@@ -57,8 +57,8 @@ function GameForm(props) {
   }
 
   return (
-    <div >
-      <h2 className="Title">Create a new game</h2>
+    <div>
+      <h3 className="Title">Create a new game</h3>
 
       <form 
         className="GameForm"
@@ -67,7 +67,7 @@ function GameForm(props) {
         <label 
         className = "FormInputs"
         >
-          Name of the adventure
+          <p>Name of the adventure</p>
           <input
             name="name"
             type="text"
@@ -79,7 +79,7 @@ function GameForm(props) {
         <label
         className = "FormInputs"
         >
-          Universe or system
+          <p>Universe or system</p>
           <input
             name="universe"
             type="text"
@@ -91,7 +91,7 @@ function GameForm(props) {
         <label
         className = "FormInputs"
         >
-          Date
+          <p>Date</p>
           <input
             name="date"
             type="date"
@@ -100,12 +100,15 @@ function GameForm(props) {
           />
         </label>
 
+        <div className="buttonDiv">
         <button 
         type="submit"
         className="button"
+        className="rpgui-button rpgui-center"
         >
           Submit
         </button>
+        </div>
 
       </form>
     </div>
