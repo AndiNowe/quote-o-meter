@@ -35,7 +35,7 @@ h1 {
     position: relative;
     /* border */
     border-style: solid;
-    border-image-source: url("dist/img/border-image-golden2.png");
+    border-image-source: url("dist/img/border-image-grey.png");
     border-image-repeat: repeat;
     border-image-slice: 3 3 3 3;
     border-image-width: 7px;
@@ -46,7 +46,7 @@ h1 {
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     /* background */
-    background: url("dist/img/background-image-golden2.png") repeat repeat;
+    background: url("dist/img/background-image-grey.png") repeat repeat;
     background-clip: padding-box;
     background-origin: padding-box;
     background-position: center; }
