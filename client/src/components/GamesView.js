@@ -26,13 +26,16 @@ function GamesView(props) {
 
 
   
-  function deleteGame(id) {
+  function deleteGame(event) {
+
+    event.stopPropagation();
+
     let options = {
       method: "DELETE",
       body: JSON.stringify(games)
     };
 
-    fetch(`/games/${id}`, options)
+    fetch(`/games/${event.clickedGame.id}`, options)
       .then(result => result.json())
       .then(games => {
         setGames(games);
@@ -89,7 +92,10 @@ function GamesView(props) {
                         <button  
                           className = "button"
                           type="button"
-                          onClick={() => deleteGame(g.id)}
+                          onClick={event => {
+                            event.clickedGame = g;
+                            deleteGame(event);
+                          }}
                         >
                         Delete
                         </button> 
