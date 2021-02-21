@@ -5,10 +5,19 @@
 }
 
 
+.right {
+    position:relative;
+    left: 1355px;
+}
+
+h1 {
+    font-size: 35px !important;
+  }
+
 .AllScreen {
     /* position: fixed;
-    z-index: 10; 
-    overflow: show; */
+    z-index: 10;*/ 
+    overflow: scroll; 
     width: 100%  !important;
     height: 100%  !important; 
 }

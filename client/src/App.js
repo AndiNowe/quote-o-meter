@@ -25,7 +25,17 @@ function App() {
 
     
       <div id="paragraphs" class="rpgui-container center framed-golden-2-custom AllScreen">
-          <h1>Frasòmetre</h1>
+
+      
+          <h1><div class="rpgui-icon sword"></div>Quote-o-meter<div class="rpgui-icon potion-green"></div></h1>
+
+          <br></br>
+
+          <hr />
+
+          <br /><br />
+       
+      
 
           <Routes onGetGame={(g) => getGame2(g)}
             game = {game}
