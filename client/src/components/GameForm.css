@@ -1,0 +1,25 @@
+.Title {
+    display: flex;
+    justify-content: center;
+}
+
+.FormInputs {
+    text-align: center;
+    margin: 10px;
+  }
+
+.button {
+    width: fit-content;  
+    margin: 0 auto;
+    display: block;
+}
+
+label {
+    display:block;
+}
+
+input, textarea {
+    display: block;
+    margin: 0 auto 1em auto;
+  }
+  

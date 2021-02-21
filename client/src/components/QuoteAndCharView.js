@@ -1,18 +1,28 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { Link } from 'react-router-dom';
+import "./QuoteAndCharView.css";
 
 
 function QuoteAndChar(props) {
 
-  console.log("props" + JSON.stringify(props));
+  // console.log("props" + JSON.stringify(props));
 
-  let gameId = props.game.id;
+  let gameId;
+
+  if (props.game == null) {
+    gameId = props.gameId;
+ 
+  } else {
+    gameId = props.game.id;
+  }
+  
   
   let [quotes, setQuotes] = useState([]);
   let [characters, setCharacters] = useState([]);
 
-  console.log("quotes" + JSON.stringify(quotes));
-  console.log("chars" + JSON.stringify(characters));
+
+  // console.log("quotes" + JSON.stringify(quotes));
+  // console.log("chars" + JSON.stringify(characters));
   
 
   function fetchQuotesByGameId(gameId) {
@@ -91,70 +101,85 @@ function QuoteAndChar(props) {
     return (
       <div className="QuoteAndChar">
 
-        <Link to="/quote_form">
-            <button  
-              type="button"
-            >
-            Create a new quote
-            </button> 
-        </Link>
+        <div className= "createFormButtons">
 
-        <Link to="/character_form">
-            <button  
-              type="button"
-            >
-            Create a new character
-            </button> 
-        </Link>
+          <Link to="/quote_form">
+              <button 
+                className= "formButton" 
+                type="button"
+              >
+              New quote
+              </button> 
+          </Link>
+
+          <Link to="/character_form">
+              <button  
+                className= "formButton"
+                type="button"
+              >
+              New character
+              </button> 
+          </Link>
+        </div>
    
-   
-      <h3>Inside a game</h3>
+      <div className="littleTitle">
+        <h3>Great players, better quotes.</h3>
+      </div>
 
-      <ul>
-         {quotes &&
-                quotes.map(q => (
-                    <li 
-                      className="quotes"
-                      key={q.id}
-                    >
-
-                      Quote: {q.quote} 
-
-                      <button  
-                        type="button"
-                        onClick={() => deleteQuote(q.id)}
-                      >
-                      Delete
-                      </button> 
-
-                    </li>
-                    )
-                )
-            }   
-         </ul>
-
-         <ul>
+      <div className="characters">
          {characters &&
                 characters.map(c => (
-                    <li 
-                      className="quotes"
+                    <div 
                       key={c.id}
                     >
+                      
+                      <ul>Player: {" "+c.player}</ul>
+                      <ul>Character: {" "+c.charname}</ul> 
+                      <ul>Race: {" "+c.race}</ul>
+                      <ul>Class: {" "+c.charclass}</ul>
+                      <ul>Description: {" "+c.description}</ul>
+                      
 
-                      Char: {c.charname} 
 
                       <button  
+                        className = "button"
                         type="button"
                         onClick={() => deleteCharacter(c.id)}
                       >
                       Delete
                       </button> 
 
-                    </li>
+                    </div>
                     )
                 )
             }   
-         </ul>
+        </div>
+
+        <div >
+          {quotes &&
+                  quotes.map(q => (
+                      <div 
+                        className = "quotes"
+                        key={q.id}
+                      >
+
+                        Quote: {q.quote} 
+
+                        <button  
+                          className = "button"
+                          type="button"
+                          onClick={() => deleteQuote(q.id)}
+                        >
+                        Delete
+                        </button> 
+
+                      </div>
+                      )
+              )
+              }   
+      </div>
+
+      
       
   
       </div>

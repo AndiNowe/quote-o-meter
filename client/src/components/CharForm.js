@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 // import "./CharForm.css";
 import { Link, useHistory } from 'react-router-dom';
+import "./CharForm.css";
 
 
 function CharForm(props) {
@@ -70,11 +71,16 @@ function CharForm(props) {
 
 
   return (
-    <div className="CharForm">
-      <h2>Create your character</h2>
+    <div >
+      <h2 className="Title">Create your character</h2>
 
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form 
+      onSubmit={handleSubmit}
+      className="CharForm">
+
+        <label
+          className = "CharacterInputs"
+        >
           Who's the player?
           <input
             name="player"
@@ -84,7 +90,9 @@ function CharForm(props) {
           />
         </label>
 
-        <label>
+        <label
+          className = "CharacterInputs"
+        >
           Name of the character:
           <input
             name="charname"
@@ -93,7 +101,10 @@ function CharForm(props) {
             onChange={handleChange}
           />
         </label>
-        <label>
+
+        <label 
+          className = "CharacterInputs"
+        >
           Are they an elf? Dwarf? Vampire?
           <input
             name="race"
@@ -103,7 +114,9 @@ function CharForm(props) {
           />
         </label>
 
-        <label>
+        <label 
+          className = "CharacterInputs"
+        >
           What class did you pick?
           <input
             name="charclass"
@@ -113,9 +126,12 @@ function CharForm(props) {
           />
         </label>
 
-        <label>
+        <label
+          className = "CharacterInputs"
+        >
           Short description:
           <textarea
+            className ="CharacterText"
             name="description"
             type="text"
             value={description}
@@ -123,8 +139,15 @@ function CharForm(props) {
           />
         </label>
 
-        <button type="submit">Submit</button>
+        <button 
+          type="submit"
+          className="button"
+        >
+          Submit
+        </button>
+
       </form>
+
     </div>
   );
 }

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-// import "./QuoteForm.css";
+import "./QuoteForm.css";
 import { Link, useHistory } from 'react-router-dom';
 
 function QuoteForm(props) {
@@ -34,20 +34,24 @@ function QuoteForm(props) {
     };
 
     fetch("/quotes", options)
+     .then(result => result.json())
       .catch(err => {
         console.log("error!", err.message);
       });
   }
 
   return (
-    <div className="QuoteForm">
-      <h2>Write the quote down!</h2>
+    <div>
+      <h2 className="Title">What did that scallywag say?!</h2>
 
-      <form onSubmit={handleSubmit}>
-        <label>
+      <form 
+        onSubmit={handleSubmit}
+        className="GameForm">
+
+        <label className = "QuoteInput">
           Quote:
-          <br></br>
           <textarea
+            className ="quoteText"
             name="quote"
             type="text"
             value={quote}
@@ -58,6 +62,7 @@ function QuoteForm(props) {
         
         <button 
           type="submit"
+          className="button"
         >Submit</button>
       
       </form>

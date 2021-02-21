@@ -1,10 +1,13 @@
 import React, { useEffect, useState } from "react";
-import { Link, useParams } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
+import "./GamesView.css";
+
 
 function GamesView(props) {
 
 
   let [games, setGames] = useState([]);
+  const history = useHistory();
   
   useEffect(() => {
     /**
@@ -43,59 +46,75 @@ function GamesView(props) {
 
   function handleClick (g) {
     props.getGame(g);
+    history.push(`/quoteandchar/${g.id}`);
+    
   }
 
 
     return (
       <div className="Games">
 
-        <Link to="/game_form">
-            <button  
-              type="button"
-            >
-            Create a new game
-            </button> 
-        </Link>
+        <div className= "createFormButtons">
+          <Link to="/game_form">
+              <button  
+                type="button"
+              >
+              New game
+              </button> 
+          </Link>
+        </div>
 
    
-      <h3>List of Games</h3>
+        <h3 className= "Title">Saved Games</h3>
 
-       {/* ".map()" won't render until "games" has value */}
+        {/* ".map()" won't render until "games" has value */}
 
-       <ul>
-         {games &&
-                games.map(g => (
-                    <li 
-                      className="games"
-                      key={g.id}
-                    >
+        
 
-                      Name: {g.name} 
-                      Universe: {g.universe}
-                      Date: {g.date}
-
-                      <button  
-                        type="button"
-                        onClick={() => deleteGame(g.id)}
-                      >
-                      Delete
-                      </button> 
-
-                      <Link to={`/quoteandchar/${g.id}`}>
-                      <button  
-                        type="button"
+        <div className="games">
+          {games &&
+                  games.map(g => (
+                    // <Link to={`/quoteandchar/${g.id}`}>
+                      <div 
+                        key={g.id}
                         onClick={() =>handleClick(g)}
+                        className = "card"
+                        
                       >
-                       Go to the game!
-                      </button> 
-                      </Link>
+
+                        <ul>Name: {" "+g.name}</ul> 
+                        <ul>Universe: {" "+g.universe}</ul>
+                        <ul>Date: {" "+g.date}</ul>
+
+                        <button  
+                          className = "button"
+                          type="button"
+                          onClick={() => deleteGame(g.id)}
+                        >
+                        Delete
+                        </button> 
+
+                        {/* <Link to={`/quoteandchar/${g.id}`}>
+                        <button  
+                          type="button"
+                          onClick={() =>handleClick(g)}
+                        >
+                        Go to the game!
+                        </button> 
+                        </Link> */}
 
 
-                    </li>
-                    )
-                )
-            }   
-         </ul>
+                      </div>
+                      // </Link>
+                      )
+                  )
+              }   
+        </div>
+
+        
+        
+
+
       </div>
       
     );

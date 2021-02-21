@@ -1,0 +1,27 @@
+.Title {
+    display: flex;
+    justify-content: center;
+}
+
+.QuoteInput {
+    text-align: center;
+    margin: 10px;
+  }
+
+.button {
+    width: fit-content;  
+    margin: 0 auto;
+    display: block;
+}
+
+label {
+    display:block;
+}
+
+.quoteText {
+    display: block;
+    width: 320px;
+    height: 120px;
+    margin: 0 auto 1em auto;
+  }
+  
