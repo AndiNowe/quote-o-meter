@@ -61,20 +61,23 @@ function GamesView(props) {
           <Link to="/game_form">
               <button  
                 type="button"
+                className="rpgui-button"
               >
               New game
               </button> 
           </Link>
         </div>
 
-   
+        <br></br>
+        <br></br>
+
         <h3 className= "Title">Saved Games</h3>
 
         {/* ".map()" won't render until "games" has value */}
 
         
 
-        <div className="games">
+        <div className="games ">
           {games &&
                   games.map(g => (
                     // <Link to={`/quoteandchar/${g.id}`}>
@@ -82,12 +85,22 @@ function GamesView(props) {
                         key={g.id}
                         onClick={() =>handleClick(g)}
                         className = "card"
-                        
                       >
 
                         <ul>Name: {" "+g.name}</ul> 
                         <ul>Universe: {" "+g.universe}</ul>
                         <ul>Date: {" "+(new Date(g.date)).toLocaleDateString()}</ul>
+
+                        <Link to={`/quoteandchar/${g.id}`}>
+                          <button  
+                            className = "button"
+                            type="button"
+                            onClick={() =>handleClick(g)}
+                            className="rpgui-button rpgui-center"
+                          >
+                          Load Game
+                          </button> 
+                        </Link>
 
                         <button  
                           className = "button"
@@ -96,18 +109,10 @@ function GamesView(props) {
                             event.clickedGame = g;
                             deleteGame(event);
                           }}
+                          className="rpgui-button rpgui-center"
                         >
                         Delete
                         </button> 
-
-                        {/* <Link to={`/quoteandchar/${g.id}`}>
-                        <button  
-                          type="button"
-                          onClick={() =>handleClick(g)}
-                        >
-                        Go to the game!
-                        </button> 
-                        </Link> */}
 
 
                       </div>
