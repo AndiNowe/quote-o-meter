@@ -24,11 +24,10 @@ function Home() {
         icon={faDiceD20} 
         size="6x" 
         spin 
-        //inverse
+        inverse
         onClick={(e) => history.push('/games')} 
        
         />
-        
 
       </div>
       
