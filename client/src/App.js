@@ -24,8 +24,8 @@ function App() {
     
 
     
-      <div id="paragraphs" class="rpgui-container center framed-golden-2-custom">
-          <h1>Frasometre</h1>
+      <div id="paragraphs" class="rpgui-container center framed-golden-2-custom AllScreen">
+          <h1>Frasòmetre</h1>
 
           <Routes onGetGame={(g) => getGame2(g)}
             game = {game}

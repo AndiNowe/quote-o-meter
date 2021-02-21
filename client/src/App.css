@@ -5,12 +5,12 @@
 }
 
 
-.AllWidth {
-    position: fixed;
+.AllScreen {
+    /* position: fixed;
     z-index: 10; 
-    overflow: show;
-    width: 100%;
-    height: fit-content; 
+    overflow: show; */
+    width: 100%  !important;
+    height: 100%  !important; 
 }
 
 
@@ -41,3 +41,6 @@
     background-clip: padding-box;
     background-origin: padding-box;
     background-position: center; }
+
+
+    
