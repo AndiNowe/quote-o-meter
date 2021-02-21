@@ -1,4 +1,5 @@
 import './App.css';
+import './dist/rpgui.css';
 import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
@@ -19,17 +20,23 @@ function App() {
 
 
   return (
-    <div className="App">
-      
-    <div >
-      <h1 className="Title">Frasòmetre</h1>
-    </div>
+    
+    
 
-    <Routes onGetGame={(g) => getGame2(g)}
-    game = {game}
-    /> 
+    
+      <div id="paragraphs" class="rpgui-container center framed-golden-2-custom">
+          <h1>Frasometre</h1>
 
-    </div>
+          <Routes onGetGame={(g) => getGame2(g)}
+            game = {game}
+          /> 
+                  
+
+      </div>
+    
+
+    
+
   );
 }
 

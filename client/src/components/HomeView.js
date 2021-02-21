@@ -16,12 +16,15 @@ function Home() {
     return (
       <div className="Home">
 
+
+      
       <div  className="RollButton" > 
         
         <FontAwesomeIcon 
         icon={faDiceD20} 
         size="6x" 
         spin 
+        //inverse
         onClick={(e) => history.push('/games')} 
        
         />

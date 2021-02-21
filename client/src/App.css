@@ -1,4 +1,43 @@
 
 .Title {
-    text-align: center
+    display: flex;
+    justify-items: center
 }
+
+
+.AllWidth {
+    position: fixed;
+    z-index: 10; 
+    overflow: show;
+    width: 100%;
+    height: fit-content; 
+}
+
+
+.center {
+    margin: auto;
+    width: fit-content;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+/* game div with golden2 background image */
+.framed-golden-2-custom {
+    position: relative;
+    /* border */
+    border-style: solid;
+    border-image-source: url("dist/img/border-image-golden2.png");
+    border-image-repeat: repeat;
+    border-image-slice: 3 3 3 3;
+    border-image-width: 7px;
+    border-width: 7px;
+    padding: 12px;
+    /* internal border */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* background */
+    background: url("dist/img/background-image-golden2.png") repeat repeat;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-position: center; }
