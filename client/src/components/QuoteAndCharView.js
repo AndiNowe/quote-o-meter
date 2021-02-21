@@ -107,6 +107,7 @@ function QuoteAndChar(props) {
               <button 
                 className= "formButton" 
                 type="button"
+                className="rpgui-button rpgui-center"
               >
               New quote
               </button> 
@@ -116,11 +117,14 @@ function QuoteAndChar(props) {
               <button  
                 className= "formButton"
                 type="button"
+                className="rpgui-button rpgui-center"
               >
               New character
               </button> 
           </Link>
         </div>
+
+        <br></br>
    
       <div className="littleTitle">
         <h3>Great players, better quotes.</h3>
@@ -132,19 +136,20 @@ function QuoteAndChar(props) {
                     <div 
                       key={c.id}
                     >
+                      <div className="char">
+                      <ul><p>Player:</p> {" "+c.player}</ul>
+                      <ul><p>Character:</p> {" "+c.charname}</ul> 
+                      <ul><p>Race:</p> {" "+c.race}</ul>
+                      <ul><p>Class:</p> {" "+c.charclass}</ul>
+                      <ul><p>Description:</p> {" "+c.description}</ul>
+                      </div>
                       
-                      <ul>Player: {" "+c.player}</ul>
-                      <ul>Character: {" "+c.charname}</ul> 
-                      <ul>Race: {" "+c.race}</ul>
-                      <ul>Class: {" "+c.charclass}</ul>
-                      <ul>Description: {" "+c.description}</ul>
-                      
-
 
                       <button  
                         className = "button"
                         type="button"
                         onClick={() => deleteCharacter(c.id)}
+                        className="rpgui-button rpgui-center"
                       >
                       Delete
                       </button> 
@@ -162,12 +167,16 @@ function QuoteAndChar(props) {
                         className = "quotes"
                         key={q.id}
                       >
+                        <div className="quoteBox">
+                        <p> {q.quote}</p> 
+                        </div>
 
-                        Quote: {q.quote} 
+                        <br></br>
 
                         <button  
                           className = "button"
                           type="button"
+                          className="rpgui-button rpgui-center"
                           onClick={() => deleteQuote(q.id)}
                         >
                         Delete
