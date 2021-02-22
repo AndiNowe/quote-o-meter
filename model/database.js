@@ -6,6 +6,8 @@ const DB_USER = process.env.DB_USER;
 const DB_PASS = process.env.DB_PASS;
 const DB_NAME = process.env.DB_NAME;
 
+//Defining which database to connect to
+
 const dbconnection = mysql.createConnection({
   host: DB_HOST || "127.0.0.1",
   user: DB_USER || "root",
@@ -13,6 +15,9 @@ const dbconnection = mysql.createConnection({
   database: DB_NAME || "mvp",
   multipleStatements: true
 });
+
+
+//which can be initialized empty from the "init-db.sql" file. 
 
 dbconnection.connect(function(err) {
   if (err) throw err;
