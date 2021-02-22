@@ -1,6 +1,6 @@
 .createFormButtons {
     display: flex;
-    justify-content: center;
+    justify-content: center  !important;
 
 }
 
@@ -8,11 +8,10 @@
     display : flex;
     flex-direction: row;
     flex-wrap: wrap;
-    justify-content: center;
+    justify-content: center !important;
     margin-bottom: 50px;
     cursor: pointer;
-
-    
+ 
 }
 
 .Title {
@@ -28,18 +27,60 @@
 
 
 
-
+/*Mixed generic card css with rpg-ui css*/
 .card {
     /* Add shadows to create the "card" effect */
     box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
     transition: 0.3s;
     margin: 20px;
     padding: 2px 16px;
+    /* background-color: black;*/
+    color: white; 
+    border-image-source: url("dist/img/border-image.png");
+    border-image-repeat: repeat;
+    border-image-slice: 6 6 6 6;
+    border-image-width: 18px;
+    border-width: 15px;
+    padding: 12px;
+    border-style: solid;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    background: url("dist/img/background-image.png") repeat repeat;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-position: center;
+    
+    width: 30vw;
+    height: 10vw;
+    object-fit: cover;
+   
+    
   }
   
   /* On mouse-over, add a deeper shadow */
   .card:hover {
     box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    color: orange; 
   }
   
  
+  .rpgui-container.framed {
+    
+    /* border */
+    border-style: solid;
+    border-image-source: url("dist/img/border-image.png");
+    border-image-repeat: repeat;
+    border-image-slice: 6 6 6 6;
+    border-image-width: 18px;
+    border-width: 15px;
+    padding: 12px;
+    /* internal border */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* background */
+    background: url("dist/img/background-image.png") repeat repeat;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-position: center; }

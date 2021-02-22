@@ -23,5 +23,15 @@ label {
     width: 320px;
     height: 120px;
     margin: 0 auto 1em auto;
+  } 
+
+/*This button's position is ABSOLUTE, it's glued to the page. If you want to move it, it has to be redone so it is relative, probably taking out one div */
+  .buttonDivQuote {
+    margin-top: 10px;
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
   }
   

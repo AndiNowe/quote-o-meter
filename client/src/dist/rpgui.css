@@ -66,7 +66,7 @@ inside your html file.
   /* font size */
   font-size: 1.0em;
   /* default size and display */
-  max-width: 100%;
+  max-width: fit-content;
   min-width: 140px;
   height: 60px;
   display: inline-block;
@@ -111,7 +111,7 @@ inside your html file.
   padding-top: 5px;
   padding-left: 35px;
   padding-right: 35px;
-  overflow: visible; }
+  overflow: visible; } 
 
 /* button hover */
 .rpgui-button.golden.hover,
@@ -235,7 +235,8 @@ inside your html file.
   image-rendering: -o-crisp-edges;
   image-rendering: pixelated;
   /* default font */
-  font-family: 'Press Start 2P', cursive; }
+  font-family: 'Press Start 2P', cursive;
+}
 
 /**
 * customized divs (containers) and framed objects (background and frame image).
@@ -244,8 +245,11 @@ inside your html file.
 .rpgui-container {
   /* position style and default z */
   position: fixed;
-  z-index: 10;
-  overflow: show; }
+  z-index: 10; 
+  overflow: show;
+  width: fit-content;
+  height: fit-content; 
+}
 
 /* game div with background image*/
 .rpgui-container.framed {
@@ -305,7 +309,8 @@ inside your html file.
   background: url("img/background-image-golden2.png") repeat repeat;
   background-clip: padding-box;
   background-origin: padding-box;
-  background-position: center; }
+  background-position: center; 
+}
 
 /* game div with soft grey background image*/
 .rpgui-container.framed-grey {
@@ -537,7 +542,7 @@ ul.rpgui-dropdown-imp {
   line-height: 32px;
   background: #4e4a4e;
   max-width: 100%;
-  width: 100%;
+  /* width: 100%; */
   padding-left: 10px;
   /* for ie */
   min-height: 30px;

@@ -1,21 +1,27 @@
 import React, { useState } from "react";
-// import "./CharForm.css";
-import { Link, useHistory } from 'react-router-dom';
+import { useHistory } from 'react-router-dom';
 import "./CharForm.css";
 
 
 function CharForm(props) {
+
+  //This component is a form the user can fill with a character info.
+
+  //These are all the variables the user can input
   const [player, setPlayer] = useState("");
   const [charname, setCharname] = useState("");
   const [race, setRace] = useState("");
   const [charclass, setCharclass] = useState("");
   const [description, setDescription] = useState("");
+
+  //This is the useHistory to be able to go back to the previous page when the form is submitted
   const history = useHistory();
 
-
+  //The props we get
   let games_id = props.game.id;
 
-  function handleChange(event) {
+  //The function used to be able to write on the inputs and register them with the hooks.
+  function handleChange(event) { 
     let { name, value } = event.target;
 
     switch (name) {
@@ -39,14 +45,20 @@ function CharForm(props) {
     }
   }
 
+  //This function is triggered when the form is submitted
   function handleSubmit(event) {
     event.preventDefault();
 
+    //calls the function addCharacter(below), which posts and fetched from the database.
     addCharacter(player, charname, race, charclass, description);
 
+    //Get the props "up" to Routes
     props.getGame(props.game);
-    history.push(`/quoteandchar/${games_id}`);
 
+    
+
+
+    //set all inputs to empty
     setPlayer("");
     setCharname("");
     setRace("");
@@ -55,15 +67,23 @@ function CharForm(props) {
   }
 
 
+  //This function adds a character to the table 'characters'. 
   function addCharacter(player, charname, race, charclass, description) {
+
+    //The games_id comes from the props (either an onClick from GamesView, or from the URL)
     let newCharacter = { player, charname, race, charclass, description, games_id };
+
+    //Post the character to the database
     let options = {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(newCharacter)
     };
 
+    //Fetch the updated list (after waiting that it updates)
     fetch("/characters", options)
+      .then(result => result.json())
+      .then(history.push(`/quoteandchar/${games_id}`)) //When submitted, the page redirects to this route, which uses a prop.
       .catch(err => {
         console.log("error!", err.message);
       });
@@ -72,7 +92,7 @@ function CharForm(props) {
 
   return (
     <div >
-      <h2 className="Title">Create your character</h2>
+      <h3 className="Title">Create your character</h3>
 
       <form 
       onSubmit={handleSubmit}
@@ -81,7 +101,7 @@ function CharForm(props) {
         <label
           className = "CharacterInputs"
         >
-          Who's the player?
+          <p>Who's the player?</p>
           <input
             name="player"
             type="text"
@@ -93,7 +113,7 @@ function CharForm(props) {
         <label
           className = "CharacterInputs"
         >
-          Name of the character:
+          <p>Name of the character:</p>
           <input
             name="charname"
             type="text"
@@ -105,7 +125,7 @@ function CharForm(props) {
         <label 
           className = "CharacterInputs"
         >
-          Are they an elf? Dwarf? Vampire?
+          <p>Are they an elf? Dwarf? Vampire?</p>
           <input
             name="race"
             type="text"
@@ -117,7 +137,7 @@ function CharForm(props) {
         <label 
           className = "CharacterInputs"
         >
-          What class did you pick?
+          <p>What class did you pick?</p>
           <input
             name="charclass"
             type="text"
@@ -129,7 +149,7 @@ function CharForm(props) {
         <label
           className = "CharacterInputs"
         >
-          Short description:
+          <p>Short description:</p>
           <textarea
             className ="CharacterText"
             name="description"
@@ -139,12 +159,16 @@ function CharForm(props) {
           />
         </label>
 
-        <button 
-          type="submit"
-          className="button"
-        >
-          Submit
-        </button>
+        {/*This button is inside a div so the css doesn't explode, but feel free to experiment*/}
+        <div className="buttonDivChar">
+          <button 
+            type="submit"
+            className="button"
+            className="rpgui-button rpgui-center"
+          >
+            Submit
+          </button>
+        </div>
 
       </form>
 

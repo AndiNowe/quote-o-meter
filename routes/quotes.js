@@ -28,14 +28,17 @@ router.use(bodyParser.json());
 /*******************Routes**************** */
 
 
-//Get homepage
+//Get homepage,no need to use this. Used it as the default when there were no other queries. 
 
 // router.get("/", (req, res) => {
 //   //Once connected, expects a response with a message
 //   res.send({ message: "Welcome to the QUOTE- O'BRIAN, quote edition" });
 // });
 
-//GET all data from games table
+
+
+
+//GET all data from quotes table
 router.get("/", async (req, res) => {
  
   try {
@@ -44,7 +47,7 @@ router.get("/", async (req, res) => {
 
     if (results.data.length) {
     //check
-    console.log("RESULTS", results);
+    //console.log("RESULTS", results);
     //send back the full list of items with status
     res.status(200).send(results.data); 
 
@@ -60,7 +63,7 @@ router.get("/", async (req, res) => {
   
 });
 
-//GET data by ID
+//GET quotes by ID
 router.get("/:id", async (req, res) => {
   
   let id = req.params.id;
@@ -110,6 +113,8 @@ router.get("/game_id/:id", async (req, res) => {
 router.post("/", async (req, res) => {
   
   let { quote, games_id } = req.body;
+
+   //we will never write games_id on the user UI, we will always get it as props, but it always must be there to post a quote
   
   let sql = `
     INSERT INTO quotes (quote, games_id)

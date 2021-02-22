@@ -28,12 +28,14 @@ router.use(bodyParser.json());
 /*******************Routes**************** */
 
 
-//Get homepage
+//Get homepage,no need to use this. Used it as the default when there were no other queries. 
 
 // router.get("/", (req, res) => {
 //   //Once connected, expects a response with a message
 //   res.send({ message: "Welcome to the QUOTE- O'BRIAN" });
 // });
+
+
 
 //GET all data from games table
 router.get("/", async (req, res) => {
@@ -44,7 +46,7 @@ router.get("/", async (req, res) => {
 
     if (results.data.length) {
     //check
-    console.log("RESULTS", results);
+    //console.log("RESULTS", results);
     //send back the full list of items with status
     res.status(200).send(results.data); 
 
@@ -60,7 +62,8 @@ router.get("/", async (req, res) => {
   
 });
 
-//GET data by ID
+
+//GET games by ID
 router.get("/:id", async (req, res) => {
   
   let id = req.params.id;
@@ -74,7 +77,7 @@ router.get("/:id", async (req, res) => {
   try {
 
     let results = await db(sql);
-    //returns obj and not the array for items, results.data is array, we want the index of [0]
+
     res.send(results.data[0]);
 
   } catch (err) {
@@ -129,7 +132,7 @@ router.delete("/:id", async (req, res) => {
       res.send(results.data);
 
     } else {
-      // else task not found; return 404 status code, does not exist in table "games"
+     
       res.status(404).send({ error: "This game does not exist. " });
     }
   

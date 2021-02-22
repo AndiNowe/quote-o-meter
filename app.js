@@ -1,18 +1,23 @@
 //import Dependencies
 
+
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 var logger = require("morgan");
+//DON'T UNCOMMENT THIS
 // var cors = require("cors");
 
+
+//define routes for each table
 var gamesRouter = require('./routes/games');
 var quotesRouter = require('./routes/quotes');
 var charactersRouter = require('./routes/characters');
 
 var app = express();
 
+//SAME, DON'T UNCOMMENT
 // app.use(cors());
 app.use(logger("dev"));
 app.use(express.json());

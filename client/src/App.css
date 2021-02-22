@@ -1,4 +1,58 @@
 
 .Title {
-    text-align: center
+    display: flex;
+    justify-items: center
 }
+
+
+.right {
+    position:relative;
+    left: 1355px;
+}
+
+h1 {
+    font-size: 35px !important;
+  }
+
+.AllScreen {
+    /* position: fixed;
+    z-index: 10;*/ 
+    overflow: scroll; 
+    width: 100%  !important;
+    height: 100%  !important; 
+}
+
+
+.center {
+    margin: auto;
+    width: fit-content;
+    border: 3px solid green;
+    padding: 10px;
+}
+
+/* game div with GRAY background image. I customized css classes from the folder dist. This backgournd was supposed to be golden but 
+I changed my mind. I liked the button configuration so I just took the image from another background config and changed it.
+*/
+
+.framed-golden-2-custom {
+    position: relative;
+    /* border */
+    border-style: solid;
+    border-image-source: url("dist/img/border-image-grey.png");
+    border-image-repeat: repeat;
+    border-image-slice: 3 3 3 3;
+    border-image-width: 7px;
+    border-width: 7px;
+    padding: 12px;
+    /* internal border */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    /* background */
+    background: url("dist/img/background-image-grey.png") repeat repeat;
+    background-clip: padding-box;
+    background-origin: padding-box;
+    background-position: center; }
+
+
+    

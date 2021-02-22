@@ -6,12 +6,13 @@
 .FormInputs {
     text-align: center;
     margin: 10px;
+
   }
 
 .button {
-    width: fit-content;  
+    width: fit-content;
     margin: 0 auto;
-    display: block;
+    
 }
 
 label {
@@ -21,5 +22,17 @@ label {
 input, textarea {
     display: block;
     margin: 0 auto 1em auto;
+
   }
-  
+
+
+
+/*This button's position is ABSOLUTE, it's glued to the page. If you want to move it, it has to be redone so it is relative, probably taking out one div */
+  .buttonDiv {
+    margin-top: 10px;
+    position: absolute;
+    top: 85%;
+    left: 50%;
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+  }

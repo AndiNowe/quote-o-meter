@@ -14,6 +14,10 @@ import QuoteAndCharView from './QuoteAndCharView';
 
 function Routes(props) {
     
+    //Many of this routes send props up to App.js, so App can send them back down to Routes, 
+    //and further down to other children that can't communicate amongst themselves.
+
+    //Many of these also get game as props, which is the object that App.js is "returning" down. 
 
     
     return (
@@ -53,35 +57,18 @@ function Routes(props) {
                 <QuoteAndCharView game = {props.game}/>
             </Route>
 
-             {/* Inside a Game from the ID*/}
+             {/* Inside a Game from the URL ID*/}
             <Route path='/quoteandchar/:id(\d+)' render={(routeProps) => {
 
+                //This is made to be able to have the game id on the url. Generally, the route /quoteandchar/ID is defined with a game id that 
+                //comes from props, which comes from an "onClick" from GamesView.
+
+                //If we were to enter quotesandchar/3 directly, without clicking on game 3, it will go through this route, as it gets
+                //the prop it needs from the url instead of from the parent. 
                 let id = Number(routeProps.match.params.id);
             
                 return <QuoteAndCharView gameId = {id} />
             }} />
-
-
-
-            {/* UserProfile: The easy way 
-            <Route path="/users/:id(\d+)">
-                <UserProfileView users={props.users} />
-            </Route>
-
-            {/* UserProfile: The "better" way 
-            <Route path='/users/:id(\d+)' render={(routeProps) => {
-                // Get ID from URL param
-                let id = Number(routeProps.match.params.id);
-                // Find user with that ID
-                let user = props.users.find(u => u.id === id);
-                // Return profile component with user passed as prop
-                return <UserProfileView user={user} />
-            }} />*/}
-
-            {/* AddUserView 
-            <Route path="/add-user">
-                <AddUserView onAddUser={(name) => props.onAddUser(name)} />
-            </Route> */}
 
             {/* None of the routes matched: Error 404! */}
             <Error404View />
