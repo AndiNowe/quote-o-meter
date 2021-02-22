@@ -46,7 +46,7 @@ router.get("/", async (req, res) => {
 
     if (results.data.length) {
     //check
-    console.log("RESULTS", results);
+    //console.log("RESULTS", results);
     //send back the full list of items with status
     res.status(200).send(results.data); 
 
