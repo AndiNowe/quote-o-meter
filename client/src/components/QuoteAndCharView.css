@@ -13,6 +13,7 @@
     flex-wrap: wrap;
     align-content: center;
     margin-bottom: 5px;
+   
 }
 
 .button {
@@ -62,8 +63,8 @@
     background-origin: padding-box;
     background-position: center;
     
-    width: fit-content;
-    height: fit-content;
+    width: 20vw;
+    height: 30vw;
     object-fit: cover;
    
     
@@ -94,9 +95,9 @@
     background-origin: padding-box;
     background-position: center;
     
-    width: fit-content;
-    height: fit-content;
-    object-fit: cover; 
+    width: 70vw;
+    /* height: 30vw; */
+    object-fit: cover;
 }
    
     
