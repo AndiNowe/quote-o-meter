@@ -32,8 +32,7 @@ function QuoteForm(props) {
     //Get the props "up" to Routes
     props.getGame(props.game);
 
-    //When submitted, the page redirects to this route, which uses a prop.
-    history.push(`/quoteandchar/${games_id}`);
+ 
 
     //set all inputs to empty
     setquote("");
@@ -55,6 +54,8 @@ function QuoteForm(props) {
     //Fetch the updated list (after waiting that it updates)
     fetch("/quotes", options)
       .then(result => result.json())
+         //When submitted, the page redirects to this route, which uses a prop.
+      .then(history.push(`/quoteandchar/${games_id}`))
       .catch(err => {
         console.log("error!", err.message);
       });

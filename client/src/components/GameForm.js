@@ -45,8 +45,6 @@ function GameForm(props) {
     //Get the props "up" to Routes
     props.getGame(props.game);
 
-    //When submitted, the page redirects to this route
-    history.push('/games');
 
     //set all inputs to empty
     setName("");
@@ -70,6 +68,8 @@ function GameForm(props) {
     //Fetch the updated list (after waiting that it updates)
     fetch("/games", options)
       .then(result => result.json())
+        //When submitted, the page redirects to this route
+      .then(history.push('/games'))
       .catch(err => {
         console.log("error!", err.message);
       });

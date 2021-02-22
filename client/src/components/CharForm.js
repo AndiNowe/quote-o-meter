@@ -55,8 +55,7 @@ function CharForm(props) {
     //Get the props "up" to Routes
     props.getGame(props.game);
 
-    //When submitted, the page redirects to this route, which uses a prop.
-    history.push(`/quoteandchar/${games_id}`);
+    
 
 
     //set all inputs to empty
@@ -84,6 +83,7 @@ function CharForm(props) {
     //Fetch the updated list (after waiting that it updates)
     fetch("/characters", options)
       .then(result => result.json())
+      .then(history.push(`/quoteandchar/${games_id}`)) //When submitted, the page redirects to this route, which uses a prop.
       .catch(err => {
         console.log("error!", err.message);
       });
