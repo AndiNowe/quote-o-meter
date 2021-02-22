@@ -1,4 +1,5 @@
 // this is usually for users and authentication
+// No users for now
 
 
 var express = require('express');
