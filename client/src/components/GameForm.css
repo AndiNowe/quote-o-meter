@@ -27,8 +27,7 @@ input, textarea {
 
 
 
-
-
+/*This button's position is ABSOLUTE, it's glued to the page. If you want to move it, it has to be redone so it is relative, probably taking out one div */
   .buttonDiv {
     margin-top: 10px;
     position: absolute;

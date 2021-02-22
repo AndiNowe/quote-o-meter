@@ -161,13 +161,13 @@ function CharForm(props) {
 
         {/*This button is inside a div so the css doesn't explode, but feel free to experiment*/}
         <div className="buttonDivChar">
-        <button 
-          type="submit"
-          className="button"
-          className="rpgui-button rpgui-center"
-        >
-          Submit
-        </button>
+          <button 
+            type="submit"
+            className="button"
+            className="rpgui-button rpgui-center"
+          >
+            Submit
+          </button>
         </div>
 
       </form>

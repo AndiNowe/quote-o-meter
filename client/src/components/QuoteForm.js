@@ -9,7 +9,7 @@ function QuoteForm(props) {
   //This is the variable the user can input
   const [quote, setquote] = useState("");
 
-   //This is the useHistory to be able to go back to the previous page when the form is submitted
+  //This is the useHistory to be able to go back to the previous page when the form is submitted
   const history = useHistory();
 
   //The props we get
@@ -39,7 +39,7 @@ function QuoteForm(props) {
     setquote("");
   }
 
-  //This function adds a character to the table 'quotes'. 
+  //This function adds a quote to the table 'quotes'. 
   function addQuote(quote) {
 
     //The games_id comes from the props (either an onClick from GamesView, or from the URL)
@@ -81,11 +81,11 @@ function QuoteForm(props) {
 
         {/*This button is inside a div so the css doesn't explode, but feel free to experiment*/}
         <div className="buttonDivQuote">
-        <button 
-          type="submit"
-          className="button"
-          className="rpgui-button rpgui-center"
-        >Submit</button>
+          <button 
+            type="submit"
+            className="button"
+            className="rpgui-button rpgui-center"
+          >Submit</button>
         </div>
       
       </form>
