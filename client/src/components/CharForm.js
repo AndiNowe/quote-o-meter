@@ -7,7 +7,7 @@ function CharForm(props) {
 
   //This component is a form the user can fill with a character info.
 
-  //This are all the variables the user can input
+  //These are all the variables the user can input
   const [player, setPlayer] = useState("");
   const [charname, setCharname] = useState("");
   const [race, setRace] = useState("");
@@ -45,10 +45,11 @@ function CharForm(props) {
     }
   }
 
-  //This function is triggered when the form is submitted, and calls the function on line 66, which posts and fetched from the database.
+  //This function is triggered when the form is submitted
   function handleSubmit(event) {
     event.preventDefault();
 
+    //calls the function addCharacter(below), which posts and fetched from the database.
     addCharacter(player, charname, race, charclass, description);
 
     //Get the props "up" to Routes
@@ -68,7 +69,6 @@ function CharForm(props) {
 
 
   //This function adds a character to the table 'characters'. 
-  
   function addCharacter(player, charname, race, charclass, description) {
 
     //The games_id comes from the props (either an onClick from GamesView, or from the URL)
