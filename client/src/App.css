@@ -30,7 +30,10 @@ h1 {
     padding: 10px;
 }
 
-/* game div with golden2 background image */
+/* game div with GRAY background image. I customized css classes from the folder dist. This backgournd was supposed to be golden but 
+I changed my mind. I liked the button configuration so I just took the image from another background config and changed it.
+*/
+
 .framed-golden-2-custom {
     position: relative;
     /* border */
