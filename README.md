@@ -17,6 +17,8 @@ npm install
 
 - The front end is built with React.
 
+- Back end tested with Postman.
+
 - To create an empty database from scratch we will use this command on the mysql console:
 
 ```bash
