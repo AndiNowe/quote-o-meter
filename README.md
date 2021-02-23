@@ -4,7 +4,7 @@ The idea of this project is to build a website to store the best quotes and joke
 
 ## Installation
 
-- Install npm for the back end and front end:
+- Install Node.js for the back end and front end:
 
 ```bash
 npm install
