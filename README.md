@@ -29,7 +29,7 @@ mysql -u root -p mvp < [C:\Insert here the route of the "init-db.sql" file}
 
 ## User flow schema:
 
-![User Flow Schema](./Images/User_flow_schema.jpg)
+![User flow schema](./Images/User_flow_schema.jpg)
 
 
 ## Wanted features
