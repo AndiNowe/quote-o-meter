@@ -19,7 +19,9 @@ npm install
 
 - Back end tested with Postman.
 
-- To create an empty database from scratch we will use this command on the mysql console:
+- Create a database called "mvp". 
+
+- To create the tables for the database we will use this command on the mysql console:
 
 ```bash
 mysql -u root -p mvp < [C:\Insert here the route of the "init-db.sql" file}
