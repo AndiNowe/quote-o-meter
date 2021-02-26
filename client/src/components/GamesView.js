@@ -87,7 +87,7 @@ function GamesView(props) {
         <h3 className= "Title">Saved Games</h3>
 
         {/* ".map()" won't render until "games" has value */}
-        <div className="games ">
+        <div className="games">
           {games &&
                   games.map(g => (
                     

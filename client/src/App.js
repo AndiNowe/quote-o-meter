@@ -1,7 +1,7 @@
 import './App.css';
 import './dist/rpgui.css';
-import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import React, { /*useEffect,*/ useState } from "react";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 import Routes from './components/Routes';
 
