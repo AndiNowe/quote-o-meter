@@ -72,7 +72,8 @@ function QuoteForm(props) {
         <label className = "QuoteInput">
           <p>Quote:</p>
           <textarea
-            className ="quoteText"
+            id ="quoteText"
+            className="rpgui-container framed"
             name="quote"
             type="text"
             value={quote}

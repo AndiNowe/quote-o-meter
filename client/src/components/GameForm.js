@@ -88,6 +88,8 @@ function GameForm(props) {
         >
           <p>Name of the adventure</p>
           <input
+            id="name"
+            className="rpgui-container framed"
             name="name"
             type="text"
             value={name}
@@ -100,6 +102,8 @@ function GameForm(props) {
         >
           <p>Universe or system</p>
           <input
+            id="universe"
+            className="rpgui-container framed"
             name="universe"
             type="text"
             value={universe}
@@ -112,6 +116,8 @@ function GameForm(props) {
         >
           <p>Date</p>
           <input
+            id="date"
+            className="rpgui-container framed"
             name="date"
             type="date"
             value={date}

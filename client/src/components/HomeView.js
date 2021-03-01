@@ -21,6 +21,8 @@ function Home() {
       <div  className="RollButton" > 
         
         <FontAwesomeIcon 
+        id="roll-icon"
+        className="roll-icon"
         icon={faDiceD20} 
         size="6x" 
         spin 

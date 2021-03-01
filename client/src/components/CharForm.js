@@ -103,6 +103,8 @@ function CharForm(props) {
         >
           <p>Who's the player?</p>
           <input
+            id="player"
+            className="rpgui-container framed"
             name="player"
             type="text"
             value={player}
@@ -115,6 +117,8 @@ function CharForm(props) {
         >
           <p>Name of the character:</p>
           <input
+            id="charname"
+            className="rpgui-container framed"
             name="charname"
             type="text"
             value={charname}
@@ -127,6 +131,8 @@ function CharForm(props) {
         >
           <p>Are they an elf? Dwarf? Vampire?</p>
           <input
+            id="race"
+            className="rpgui-container framed"
             name="race"
             type="text"
             value={race}
@@ -139,6 +145,8 @@ function CharForm(props) {
         >
           <p>What class did you pick?</p>
           <input
+            id="charclass"
+            className="rpgui-container framed"
             name="charclass"
             type="text"
             value={charclass}
@@ -151,7 +159,8 @@ function CharForm(props) {
         >
           <p>Short description:</p>
           <textarea
-            className ="CharacterText"
+            id="CharacterText"
+            className ="rpgui-container framed"
             name="description"
             type="text"
             value={description}

@@ -27,7 +27,7 @@ function App() {
         On the index.html file, the root file is all inside this kind of div, so the visuals can render.
         */}
       
-          <h1><div class="rpgui-icon sword"></div>Quote-o-meter<div class="rpgui-icon potion-green"></div></h1>
+          <h1 id="h1"><div id="sword" class="rpgui-icon sword"></div>Quote-o-meter<div id="potion" class="rpgui-icon potion-green"></div></h1>
 
           <br></br>
 
