@@ -17,3 +17,11 @@ need to be spaced evenly
     Maybe indicate which player was selecter after "scallywag"
 13. If user goes to New quote first, and tries to submit a new quote without adding new 
 character first, Post gets 500 error. error from delay?
+14. With pre-added data in mysql, select new game, added new game, post successful, need to refresh games page to see added game
+15. Load saved game, select new quote, New Quote will post 500 status error if string contains apostraphe
+16. Create new character works 
+17. Add home button to quote and character page
+
+
+Background:
+https://wallpaperaccess.com/pixel-forest
