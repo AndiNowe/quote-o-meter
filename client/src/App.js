@@ -8,8 +8,6 @@ import Routes from './components/Routes';
 
 function App() {
 
-  
-
   let [game, setGame] = useState([]);
 
   //explained on line 46
@@ -21,10 +19,8 @@ function App() {
 
 
   return (
-    
-    
 
-      
+  
       <div id="paragraphs" class="rpgui-container center framed-golden-2-custom AllScreen">
         {/*
         In order for this css library to work, all things that contain this css must be inside a div with the "rpgui-container" class
