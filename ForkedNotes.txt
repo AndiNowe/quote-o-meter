@@ -23,5 +23,15 @@ character first, Post gets 500 error. error from delay?
 17. Add home button to quote and character page
 
 
-Background:
-https://wallpaperaccess.com/pixel-forest
+CSS Change:
+    Background:
+    https://wallpaperaccess.com/pixel-forest
+
+    Div containers
+
+    Shadows to text
+
+    Re-aligned buttons
+
+    Hover highlight on Roll
+
