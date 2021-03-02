@@ -2,7 +2,7 @@ import './App.css';
 import './dist/rpgui.css';
 import React, { /*useEffect,*/ useState } from "react";
 // import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+// import LoginRegForm from './components/LoginForm'
 import Routes from './components/Routes';
 
 
@@ -35,7 +35,8 @@ function App() {
           <hr />
 
           <br /><br />
-       
+
+          {/* <LoginRegForm /> */}
       
           {/*Routes for all the different views 
           - onGetGame={(g) => getGame2(g)} is a call that comes from the Routes file, which calls getGame2 from up here on App.js.
@@ -45,7 +46,6 @@ function App() {
           <Routes onGetGame={(g) => getGame2(g)}
             game = {game}
           /> 
-                  
 
       </div>
     

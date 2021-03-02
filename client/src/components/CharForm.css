@@ -15,12 +15,18 @@
     justify-content: center;
 }
 
+/*highliight avatar on hover*/
+#char-icons img:hover{
+    background-color: lightcyan;
+    opacity: 1.5;
+}
+
 /*unorder list for character icons*/
 ul#char-icons {
     margin-left: 50px;
 }
 
-/*label for character icon container */
+/*label for character icon contaier */
 label.SelectCharIcon p {
     text-align: center;
 }

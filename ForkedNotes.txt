@@ -35,3 +35,4 @@ CSS Change:
 
     Hover highlight on Roll
 
+    Select Character Avatars - Need to add onClick

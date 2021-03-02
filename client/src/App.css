@@ -54,6 +54,7 @@ I changed my mind. I liked the button configuration so I just took the image fro
     -webkit-box-sizing: border-box;
     /* background */
     background: url('./components/ClientImages/background.png');
+    object-fit: cover;
     /* background: url("dist/img/background-image-grey.png") repeat repeat; */
     background-clip: padding-box;
     background-origin: padding-box;
