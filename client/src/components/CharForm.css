@@ -6,7 +6,24 @@
 .CharacterInputs {
     text-align: center;
     margin: 10px;
-  }
+}
+
+/*character avatars*/
+#char-icons {
+    display: flex;
+    position: relative;
+    justify-content: center;
+}
+
+/*unorder list for character icons*/
+ul#char-icons {
+    margin-left: 50px;
+}
+
+/*label for character icon container */
+label.SelectCharIcon p {
+    text-align: center;
+}
 
 .button {
     width: fit-content;  
@@ -39,4 +56,5 @@ input, textarea {
     left: 50%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
-  }
+}
+

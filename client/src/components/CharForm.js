@@ -1,6 +1,12 @@
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import "./CharForm.css";
+import Samurai from './ClientImages/Samurai.png'
+import Berzerker from './ClientImages/Berzerker.png'
+import Mage from './ClientImages/Mage.png'
+import Necromancer4 from './ClientImages/Necromancer4.png'
+import Pirate from './ClientImages/Pirate.png'
+import Knight from './ClientImages/Knight.png'
 
 
 function CharForm(props) {
@@ -11,6 +17,7 @@ function CharForm(props) {
   const [player, setPlayer] = useState("");
   const [charname, setCharname] = useState("");
   const [race, setRace] = useState("");
+  const [charIcon, setCharIcon]= useState("")
   const [charclass, setCharclass] = useState("");
   const [description, setDescription] = useState("");
 
@@ -34,6 +41,9 @@ function CharForm(props) {
       case "race":
         setRace(value);
         break;
+      case "charIcon":
+        setCharIcon(value);
+        break;
       case "charclass":
         setCharclass(value);
         break;
@@ -50,7 +60,7 @@ function CharForm(props) {
     event.preventDefault();
 
     //calls the function addCharacter(below), which posts and fetched from the database.
-    addCharacter(player, charname, race, charclass, description);
+    addCharacter(player, charname, race, charclass, charIcon, description);
 
     //Get the props "up" to Routes
     props.getGame(props.game);
@@ -63,15 +73,16 @@ function CharForm(props) {
     setCharname("");
     setRace("");
     setCharclass("");
+    setCharIcon("")
     setDescription("");
   }
 
 
   //This function adds a character to the table 'characters'. 
-  function addCharacter(player, charname, race, charclass, description) {
+  function addCharacter(player, charname, race, charclass, charIcon, description) {
 
     //The games_id comes from the props (either an onClick from GamesView, or from the URL)
-    let newCharacter = { player, charname, race, charclass, description, games_id };
+    let newCharacter = { player, charname, race, charclass, charIcon, description, games_id };
 
     //Post the character to the database
     let options = {
@@ -152,6 +163,42 @@ function CharForm(props) {
             value={charclass}
             onChange={handleChange}
           />
+        </label>
+
+        {/* This is newly added */}
+        <label className= "SelectCharIcon">
+          <p>Select Avatar</p>
+          <ul 
+            onChange={handleChange}
+            id="char-icons" 
+            className="rpgui-container framed-golden"
+            name="charIcon"
+            value={charIcon}
+            defaultValue="Select Character"
+          > 
+            <div className="rpgui-container framed" id="char-icons" >
+              <img src={Samurai} alt="Samurai" />
+            </div>
+            <div className="rpgui-container framed" id="char-icons" >
+              <img src={Berzerker} alt="Berzerker" />
+            </div>
+            <div className="rpgui-container framed" id="char-icons" >
+            <img src={Mage} alt="mage" />
+            </div>
+            
+            <div className="rpgui-container framed" id="char-icons" >
+              <img src={Necromancer4} alt="" />
+            </div>
+            
+            <div className="rpgui-container framed" id="char-icons" >
+              <img src={Pirate} alt="Pirate" />
+            </div>
+            
+            <div className="rpgui-container framed" id="char-icons" >
+              <img src={Knight} alt="Knight" />
+            </div>
+            
+          </ul>
         </label>
 
         <label
