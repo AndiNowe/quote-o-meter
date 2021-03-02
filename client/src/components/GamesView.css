@@ -80,7 +80,8 @@
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     /* background */
-    background: url("dist/img/background-image.png") repeat repeat;
+    background: url("dist/img/background-image.png")  no-repeat;
+    background-size: 100vw;
     background-clip: padding-box;
     background-origin: padding-box;
     background-position: center; }

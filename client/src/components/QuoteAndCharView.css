@@ -22,6 +22,27 @@
     display: block;
 }
 
+/*div to display character info*/
+#char{
+    /*position based on buttons and other content*/
+   position: relative;
+   /*proportion width to provide enough spacing*/
+   width: 105%;
+   text-shadow: 2px 0.5px 0.5px grey;
+  }
+
+/*new quote button*/
+#new-quote {
+    /*space between new quote and new character buttons*/
+    margin-right: 100px;
+    margin-left: 25px;
+}
+
+/*delete button*/
+#delete-button {
+    margin-top: 40px;
+    margin-left: 10px;
+}
 
 .createFormButtons {
     display: flex;
@@ -66,8 +87,7 @@
     width: 20vw;
     height: 30vw;
     object-fit: cover;
-   
-    
+
   }
 
 

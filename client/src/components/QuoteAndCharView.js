@@ -122,6 +122,7 @@ function QuoteAndChar(props) {
 
           <Link to="/quote_form">
               <button 
+                id="new-quote"
                 className= "formButton" 
                 type="button"
                 className="rpgui-button rpgui-center"
@@ -132,6 +133,7 @@ function QuoteAndChar(props) {
 
           <Link to="/character_form">
               <button  
+                id="new-char"
                 className= "formButton"
                 type="button"
                 className="rpgui-button rpgui-center"
@@ -155,7 +157,7 @@ function QuoteAndChar(props) {
                     <div 
                       key={c.id}
                     >
-                      <div className="char">
+                      <div id="char" className="rpgui-container framed">
                       <ul><p>Player:</p> {" "+c.player}</ul>
                       <ul><p>Character:</p> {" "+c.charname}</ul> 
                       <ul><p>Race:</p> {" "+c.race}</ul>
@@ -165,7 +167,7 @@ function QuoteAndChar(props) {
                       
 
                       <button  
-                        className = "button"
+                        id = "delete-button"
                         type="button"
                         onClick={() => deleteCharacter(c.id)}
                         className="rpgui-button rpgui-center"

@@ -6,3 +6,7 @@
     min-height: 60vh;
    
 }
+
+#roll-icon:hover{
+    color: goldenrod;
+}

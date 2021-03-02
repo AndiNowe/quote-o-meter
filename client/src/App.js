@@ -1,14 +1,12 @@
 import './App.css';
 import './dist/rpgui.css';
-import React, { useEffect, useState } from "react";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-
+import React, { /*useEffect,*/ useState } from "react";
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+// import LoginRegForm from './components/LoginForm'
 import Routes from './components/Routes';
 
 
 function App() {
-
-  
 
   let [game, setGame] = useState([]);
 
@@ -21,17 +19,15 @@ function App() {
 
 
   return (
-    
-    
 
-      
+  
       <div id="paragraphs" class="rpgui-container center framed-golden-2-custom AllScreen">
         {/*
         In order for this css library to work, all things that contain this css must be inside a div with the "rpgui-container" class
         On the index.html file, the root file is all inside this kind of div, so the visuals can render.
         */}
       
-          <h1><div class="rpgui-icon sword"></div>Quote-o-meter<div class="rpgui-icon potion-green"></div></h1>
+          <h1 id="h1"><div id="sword" class="rpgui-icon sword"></div>Quote-o-meter<div id="potion" class="rpgui-icon potion-green"></div></h1>
 
           <br></br>
 
@@ -39,7 +35,8 @@ function App() {
           <hr />
 
           <br /><br />
-       
+
+          {/* <LoginRegForm /> */}
       
           {/*Routes for all the different views 
           - onGetGame={(g) => getGame2(g)} is a call that comes from the Routes file, which calls getGame2 from up here on App.js.
@@ -49,7 +46,6 @@ function App() {
           <Routes onGetGame={(g) => getGame2(g)}
             game = {game}
           /> 
-                  
 
       </div>
     

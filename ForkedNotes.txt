@@ -1,0 +1,38 @@
+1. npm install on server, and client
+2. install font awesome
+3. install express and mysql
+4. Add .env
+5. install migrate
+6. Need to create Table called "mvp" first
+7. run mysql script in proj folder
+8. create values for table "games". 
+App will throw errors if no values in database
+9. User Clicks roll from App.js, fetch req to GET games by id, and auto loads into
+new page > GameView.js
+10. CSS: text spills out of container for saved games, and buttons "Load Game"and "Delete"
+need to be spaced evenly
+11. Click on any of saved games, goes to quoteandchar/:id page. There are 2 buttons
+"New Quote" and "New Character".
+12. If click "New Quote", sent to quote_form to enter text and submit.
+    Maybe indicate which player was selecter after "scallywag"
+13. If user goes to New quote first, and tries to submit a new quote without adding new 
+character first, Post gets 500 error. error from delay?
+14. With pre-added data in mysql, select new game, added new game, post successful, need to refresh games page to see added game
+15. Load saved game, select new quote, New Quote will post 500 status error if string contains apostraphe
+16. Create new character works 
+17. Add home button to quote and character page
+
+
+CSS Change:
+    Background:
+    https://wallpaperaccess.com/pixel-forest
+
+    Div containers
+
+    Shadows to text
+
+    Re-aligned buttons
+
+    Hover highlight on Roll
+
+    Select Character Avatars - Need to add onClick

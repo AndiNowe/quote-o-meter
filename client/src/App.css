@@ -11,8 +11,12 @@
 }
 
 h1 {
-    font-size: 35px !important;
+    font-size: 35px !important
   }
+
+#h1, #sword, #potion {
+    text-shadow: 6px 6px 6px black;
+}
 
 .AllScreen {
     /* position: fixed;
@@ -49,10 +53,22 @@ I changed my mind. I liked the button configuration so I just took the image fro
     -moz-box-sizing: border-box;
     -webkit-box-sizing: border-box;
     /* background */
-    background: url("dist/img/background-image-grey.png") repeat repeat;
+    background: url('./components/ClientImages/background.png');
+    object-fit: cover;
+    /* background: url("dist/img/background-image-grey.png") repeat repeat; */
     background-clip: padding-box;
     background-origin: padding-box;
     background-position: center; }
 
+    /*div containers for text*/
+    #quoteText, #name, 
+    #universe, #date,
+    #player, #charname, 
+    #race, #charclass, 
+    #CharacterText {
+        position: relative;
+    }
 
-    
+    .games {
+        text-shadow: 2px 2px 2px black;
+    }
