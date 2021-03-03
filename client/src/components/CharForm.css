@@ -6,6 +6,7 @@
 .CharacterInputs {
     text-align: center;
     margin: 10px;
+    
 }
 
 /*character avatars*/
@@ -26,10 +27,12 @@ ul#char-icons {
     margin-left: 50px;
 }
 
-/*label for character icon contaier */
+/*label for character icon container */
 label.SelectCharIcon p {
+    margin-top: 3%;
     text-align: center;
 }
+
 
 .button {
     width: fit-content;  
@@ -44,22 +47,35 @@ label {
 input, textarea {
     display: block;
     margin: 0 auto 1em auto;
-  }
-  
+}
 
-.CharacterText {
+/*Short description*/
+#CharacterText {
     display: block;
-    width: 270px;
-    height: 90px;
+    margin-top: 25%;
+    /* width: 270px;
+    height: 90px; */
+    width: 50%;
+    height: 100%;
     margin: 0 auto 1em auto;
+}
+
+label#CharacterText{
+    margin-top:5%;
 }
 
 /*This button's position is ABSOLUTE, it's glued to the page. If you want to move it, it has to be redone so it is relative */
 .buttonDivChar {
-    margin-top: 10px;
-    position: absolute;
-    top: 120%;
+    width: 100%;
+    margin-top: 10%;
+    /*need it to move it, so changes position to relative
+    position: absolute;*/
+    position:relative;
+    /*this has no affect on button in relative state
+     top: 120%; */
     left: 50%;
+    /*moves button towards the right*/
+    margin-left: 46%;
     -ms-transform: translate(-50%, -50%);
     transform: translate(-50%, -50%);
 }

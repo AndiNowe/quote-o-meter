@@ -110,6 +110,8 @@ function CharForm(props) {
       className="CharForm">
 
         <label
+          id="player"
+          htmlFor="player"
           className = "CharacterInputs"
         >
           <p>Who's the player?</p>
@@ -124,6 +126,8 @@ function CharForm(props) {
         </label>
 
         <label
+          id="charname"
+          htmlFor="charname"
           className = "CharacterInputs"
         >
           <p>Name of the character:</p>
@@ -138,6 +142,8 @@ function CharForm(props) {
         </label>
 
         <label 
+          id="race"
+          htmlFor="race"
           className = "CharacterInputs"
         >
           <p>Are they an elf? Dwarf? Vampire?</p>
@@ -152,6 +158,8 @@ function CharForm(props) {
         </label>
 
         <label 
+          id="charclass"
+          htmlFor="charclass"
           className = "CharacterInputs"
         >
           <p>What class did you pick?</p>
@@ -166,42 +174,87 @@ function CharForm(props) {
         </label>
 
         {/* This is newly added */}
-        <label className= "SelectCharIcon">
-          <p>Select Avatar</p>
+        <label 
+          htmlFor="char-icons" 
+          className= "SelectCharIcon"
+        >
+          <p id="char-icons">Select Avatar</p>
           <ul 
-            onChange={handleChange}
             id="char-icons" 
             className="rpgui-container framed-golden"
-            name="charIcon"
-            value={charIcon}
-            defaultValue="Select Character"
           > 
             <div className="rpgui-container framed" id="char-icons" >
-              <img src={Samurai} alt="Samurai" />
+              <img 
+                id="Berzerker"
+                src={Samurai} 
+                alt="Samurai" 
+                onClick={e => handleChange(e)}
+                value={charIcon}
+                name="charIcon"
+              />
             </div>
+
             <div className="rpgui-container framed" id="char-icons" >
-              <img src={Berzerker} alt="Berzerker" />
+              <img 
+                id="Berzerker"
+                src={Berzerker} 
+                alt="Berzerker"
+                onClick={e => handleChange(e)}
+                value={charIcon}
+                name="charIcon"
+              />
             </div>
+
             <div className="rpgui-container framed" id="char-icons" >
-            <img src={Mage} alt="mage" />
+            <img 
+              id="Mage"
+              src={Mage} 
+              alt="mage"
+              onClick={e => handleChange(e)}
+              value={charIcon}
+              name="charIcon" 
+            />
             </div>
             
             <div className="rpgui-container framed" id="char-icons" >
-              <img src={Necromancer4} alt="" />
+              <img 
+                id="Necromancer4"
+                src={Necromancer4} 
+                alt="Necromancer4" 
+                onClick={e => handleChange(e)}
+                value={charIcon}
+                name="charIcon"
+              />
             </div>
             
             <div className="rpgui-container framed" id="char-icons" >
-              <img src={Pirate} alt="Pirate" />
+              <img 
+                id="Pirate"
+                src={Pirate} 
+                alt="Pirate" 
+                onClick={e => handleChange(e)}
+                value={charIcon}
+                name="charIcon"
+              />
             </div>
             
             <div className="rpgui-container framed" id="char-icons" >
-              <img src={Knight} alt="Knight" />
+              <img 
+                id="Knight"
+                src={Knight} 
+                alt="Knight" 
+                onClick={e => handleChange(e)}
+                value={charIcon}
+                name="charIcon"
+              />
             </div>
             
           </ul>
         </label>
 
         <label
+          id="CharacterText"
+          htmlFor="CharacterText"
           className = "CharacterInputs"
         >
           <p>Short description:</p>
