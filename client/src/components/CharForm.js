@@ -1,12 +1,7 @@
 import React, { useState } from "react";
 import { useHistory } from 'react-router-dom';
 import "./CharForm.css";
-import Samurai from './ClientImages/Samurai.png'
-import Berzerker from './ClientImages/Berzerker.png'
-import Mage from './ClientImages/Mage.png'
-import Necromancer4 from './ClientImages/Necromancer4.png'
-import Pirate from './ClientImages/Pirate.png'
-import Knight from './ClientImages/Knight.png'
+import AvatarList from './AvatarList'
 
 
 function CharForm(props) {
@@ -17,7 +12,9 @@ function CharForm(props) {
   const [player, setPlayer] = useState("");
   const [charname, setCharname] = useState("");
   const [race, setRace] = useState("");
-  const [charIcon, setCharIcon]= useState("")
+  const [charIcon, setCharIcon]= useState(AvatarList[0])
+  //check charIcon
+  console.log("init state", charIcon)
   const [charclass, setCharclass] = useState("");
   const [description, setDescription] = useState("");
 
@@ -41,9 +38,9 @@ function CharForm(props) {
       case "race":
         setRace(value);
         break;
-      case "charIcon":
-        setCharIcon(value);
-        break;
+      // case "charIcon": 
+      //   setCharIcon(value);
+      //   break;
       case "charclass":
         setCharclass(value);
         break;
@@ -55,18 +52,16 @@ function CharForm(props) {
     }
   }
 
+
   //This function is triggered when the form is submitted
   function handleSubmit(event) {
     event.preventDefault();
 
     //calls the function addCharacter(below), which posts and fetched from the database.
     addCharacter(player, charname, race, charclass, charIcon, description);
-
+  
     //Get the props "up" to Routes
     props.getGame(props.game);
-
-    
-
 
     //set all inputs to empty
     setPlayer("");
@@ -77,10 +72,13 @@ function CharForm(props) {
     setDescription("");
   }
 
+  //check charIcon
+  console.log("CharIcon", charIcon)
+
 
   //This function adds a character to the table 'characters'. 
   function addCharacter(player, charname, race, charclass, charIcon, description) {
-
+    
     //The games_id comes from the props (either an onClick from GamesView, or from the URL)
     let newCharacter = { player, charname, race, charclass, charIcon, description, games_id };
 
@@ -98,8 +96,12 @@ function CharForm(props) {
       .catch(err => {
         console.log("error!", err.message);
       });
-  }
 
+      //check charIcon
+      console.log("Submitted", newCharacter)
+  }
+   
+  
 
   return (
     <div >
@@ -184,69 +186,16 @@ function CharForm(props) {
             className="rpgui-container framed-golden"
           > 
             <div className="rpgui-container framed" id="char-icons" >
-              <img 
-                id="Berzerker"
-                src={Samurai} 
-                alt="Samurai" 
-                onClick={e => handleChange(e)}
-                value={charIcon}
-                name="charIcon"
-              />
-            </div>
-
-            <div className="rpgui-container framed" id="char-icons" >
-              <img 
-                id="Berzerker"
-                src={Berzerker} 
-                alt="Berzerker"
-                onClick={e => handleChange(e)}
-                value={charIcon}
-                name="charIcon"
-              />
-            </div>
-
-            <div className="rpgui-container framed" id="char-icons" >
-            <img 
-              id="Mage"
-              src={Mage} 
-              alt="mage"
-              onClick={e => handleChange(e)}
-              value={charIcon}
-              name="charIcon" 
-            />
-            </div>
-            
-            <div className="rpgui-container framed" id="char-icons" >
-              <img 
-                id="Necromancer4"
-                src={Necromancer4} 
-                alt="Necromancer4" 
-                onClick={e => handleChange(e)}
-                value={charIcon}
-                name="charIcon"
-              />
-            </div>
-            
-            <div className="rpgui-container framed" id="char-icons" >
-              <img 
-                id="Pirate"
-                src={Pirate} 
-                alt="Pirate" 
-                onClick={e => handleChange(e)}
-                value={charIcon}
-                name="charIcon"
-              />
-            </div>
-            
-            <div className="rpgui-container framed" id="char-icons" >
-              <img 
-                id="Knight"
-                src={Knight} 
-                alt="Knight" 
-                onClick={e => handleChange(e)}
-                value={charIcon}
-                name="charIcon"
-              />
+                {AvatarList.map((img, index) => (
+                  <img 
+                    src={img} 
+                    key={index} 
+                    alt="avatar" 
+                    name="charIcon"
+                    onClick={() => setCharIcon(img)}
+                    value={img}
+                  />
+                ))}
             </div>
             
           </ul>

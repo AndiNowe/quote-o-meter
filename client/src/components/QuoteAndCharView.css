@@ -120,4 +120,27 @@
     object-fit: cover;
 }
    
-    
+/*character image inside characters*/
+img.avatar {
+    justify-content: center;
+    margin-left: 11%;
+    margin-bottom: 7%;
+    object-fit:contain;
+
+
+}
+
+/*To set uniform cards/containeres for each character*/
+div.character-container {
+    width: 22%;
+}
+
+/*Delete button for quotes*/
+button#quote-btn {
+    margin-left: 1.5%;
+}
+
+/**/
+/* ul p.description {
+    margin-right: 5%;
+} */

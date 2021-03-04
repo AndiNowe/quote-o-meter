@@ -102,11 +102,11 @@ router.get("/game_id/:id", async (req, res) => {
 router.post("/", async (req, res) => {
 
   //we will never write games_id on the user UI, we will always get it as props, but it always must be there to post a character
-  let { player, charname, race, charclass, description, games_id  } = req.body;
+  let { player, charname, race, charclass, charIcon, description, games_id  } = req.body;
   
   let sql = `
-    INSERT INTO characters ( player, charname, race, charclass, description, games_id)
-    VALUES ('${player}', '${charname}', '${race}', '${charclass}', '${description}', '${games_id}'  )
+    INSERT INTO characters ( player, charname, race, charclass, charIcon, description, games_id)
+    VALUES ('${player}', '${charname}', '${race}', '${charclass}', '${charIcon}', '${description}', '${games_id}'  )
   `;
   
   try {

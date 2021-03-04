@@ -4,7 +4,7 @@ import "./QuoteAndCharView.css";
 
 
 function QuoteAndChar(props) {
-
+  
   //for test purposes
   // console.log("props" + JSON.stringify(props));
 
@@ -110,10 +110,11 @@ function QuoteAndChar(props) {
       .catch(err => {
         console.log({ error: err.message });
       });
-
      
   }
-
+  //check characters and quotes to mach game id
+  console.log("QandC characters", characters)
+  console.log("QandC quotes", quotes)
 
     return (
       <div className="QuoteAndChar">
@@ -155,14 +156,18 @@ function QuoteAndChar(props) {
          {characters &&
                 characters.map(c => (
                     <div 
+                      className="character-container"
                       key={c.id}
                     >
                       <div id="char" className="rpgui-container framed">
                       <ul><p>Player:</p> {" "+c.player}</ul>
+                      <ul><p>Game #:</p> {" "+ c.games_id}</ul>
                       <ul><p>Character:</p> {" "+c.charname}</ul> 
                       <ul><p>Race:</p> {" "+c.race}</ul>
                       <ul><p>Class:</p> {" "+c.charclass}</ul>
-                      <ul><p>Description:</p> {" "+c.description}</ul>
+                      {/* This is new */}
+                      <ul id="avatar"><p>Avatar:</p> <img className="avatar"src={" "+c.charIcon} /></ul>
+                      <ul><p className="description">Description:</p> {" "+c.description}</ul>
                       </div>
                       
 
@@ -189,12 +194,16 @@ function QuoteAndChar(props) {
                         key={q.id}
                       >
                         <div className="quoteBox">
-                        <p> {q.quote}</p> 
+                        <p> Game: {q.games_id} </p>
+                        {/*  Trying to figure how to match charname with quote by game_id
+                        <p>Character: {characters.charname}</p> */}
+                        <p> "{q.quote}"</p> 
                         </div>
 
                         <br></br>
 
                         <button  
+                          id="quote-btn"
                           className = "button"
                           type="button"
                           className="rpgui-button rpgui-center"

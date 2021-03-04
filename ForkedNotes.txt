@@ -36,3 +36,7 @@ CSS Change:
     Hover highlight on Roll
 
     Select Character Avatars - Need to add onClick
+
+    Updated form to include avatar icon, also in  QuoteAndChar.js file,
+    Added "charIcon" onto "characters" table in "mvp" DB
+    
