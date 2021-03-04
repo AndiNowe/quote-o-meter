@@ -194,6 +194,13 @@ function CharForm(props) {
                     name="charIcon"
                     onClick={() => setCharIcon(img)}
                     value={img}
+                    // This sets border and background color of selected charIcon
+                    style={{ 
+                        border: charIcon === img ? "10px solid white" : "", 
+                        backgroundColor: charIcon === img ? "goldenrod" : ""
+
+                    }}
+
                   />
                 ))}
             </div>

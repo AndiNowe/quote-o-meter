@@ -24,8 +24,9 @@
 
 /*unorder list for character icons*/
 ul#char-icons {
-    margin-left: 50px;
+    margin-left: 10%;
 }
+
 
 /*label for character icon container */
 label.SelectCharIcon p {
