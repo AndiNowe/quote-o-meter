@@ -41,3 +41,6 @@ class Local {
         return user.name;
     }
 }
+
+//Don't forget to export to user everywhere!
+export default Local;

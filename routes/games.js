@@ -38,10 +38,16 @@ const { ensureUserLoggedIn } = require('../middleware/guards')
 //   res.send({ message: "Welcome to the QUOTE- O'BRIAN" });
 // });
 
+
+// ------------------------------------This was newly added------------------------------------------
+
 //GET members-only
 router.get('/members-only', ensureUserLoggedIn, function(req, res, next) {
   res.send({ message: 'Here is your Members Only content from the server ...' })
 })
+
+//---------------------------------------------------------------------------------------------------
+
 
 //GET all data from games table
 router.get("/", async (req, res) => {

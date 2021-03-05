@@ -6,38 +6,48 @@ import './LoginRegForm.css'
 
 
 export default function LoginForm () {
-    // const [email, setEmail] = useState("")
-    // const [password, setPassword] = useState("")
+    const [username, setUsername] = useState("")
+    const [password, setPassword] = useState("")
  
-    // function handleLoginSubmit(event) {
-    //     event.prevenDefault()
+    function handleLoginSubmit(event) {
+        event.prevenDefault()
+        props.onSubmit(username, password)
 
+        //reset fields
+        setUsername("")
+        setPassword("")
+    }
 
-    //     reset fields
-    //     setEmail("")
-    //     setPassword("")
-    // }
+    function handleLoginChange (event) {
+        let {name, value} = event.target
 
-    // function handleLoginChange (event) {
-    //     let {name, value} = event.target
-
-    //     switch (name) {
-    //         case "email":
-    //             setEmail(value);
-    //             break;
-    //         case "password":
-    //             setPassword(value);
-    //             break;
-    //         default:
-    //             break;
-    //     }
-    // }
+        switch (name) {
+            case "username":
+                setUsername(value);
+                break;
+            case "password":
+                setPassword(value);
+                break;
+            default:
+                break;
+        }
+    }
 
     return (
         <div className="LoginRegForm">
+            <div className="login">
+                <h2>Login</h2>
+
+                {
+                    props.error && (
+                        <div className='aler alert-danger'>{props.error}</div>
+                    )
+                }
+
+            
                 <form 
                     id="login-form"
-                    // onSubmit={handleLoginSubmit}
+                    onSubmit={handleLoginSubmit}
                 >
 
                     <ul 
@@ -50,15 +60,15 @@ export default function LoginForm () {
                             </label>
                         </div>
                         
-                        <label id="email" htmlFor="email">
+                        <label id="username" htmlFor="username">
                             Email:
                             <input 
-                                id="email"
+                                id="username"
                                 type="text"
-                                name="email"
-                                // value={email}
-                                defaultValue="user@someEmail.com" 
-                                // onChange={handleLoginChange}
+                                name="username"
+                                value={username}
+                                defaultValue="LagerthaTheFierce" 
+                                onChange={handleLoginChange}
                             />
                         </label>
                             
@@ -68,9 +78,9 @@ export default function LoginForm () {
                                 id="password" 
                                 type="password"
                                 name="password" 
-                                // value={password}
+                                value={password}
                                 defaultValue="user@someEmail.com" 
-                                // onChange={handleLoginChange}
+                                onChange={handleLoginChange}
                             />
                         </label>
                         <div className="links">
@@ -84,6 +94,7 @@ export default function LoginForm () {
                         </div>
                     </ul>
                 </form>
+                </div>
         </div>
     )
 }
