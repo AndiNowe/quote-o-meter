@@ -14,6 +14,9 @@ var logger = require("morgan");
 var gamesRouter = require('./routes/games');
 var quotesRouter = require('./routes/quotes');
 var charactersRouter = require('./routes/characters');
+//This is newly added
+var authRouter = require('./routes/userAccounts');
+
 
 var app = express();
 
@@ -34,6 +37,8 @@ app.get("/", function(req, res, next) {
 app.use("/games", gamesRouter);
 app.use("/quotes", quotesRouter);
 app.use("/characters", charactersRouter);
+//This is newly added
+app.use("/userAccounts", authRouter)
 
 // Anything that doesn't match the above, send back index.html
 app.get("*", (req, res) => {

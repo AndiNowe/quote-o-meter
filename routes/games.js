@@ -25,6 +25,9 @@ const db = require("../model/helper");
 //request and convers them to JS
 router.use(bodyParser.json());
 
+//Middleware for hashing on client side, registers routes to be protected
+const { ensureUserLoggedIn } = require('../middleware/guards')
+
 /*******************Routes**************** */
 
 
@@ -35,7 +38,10 @@ router.use(bodyParser.json());
 //   res.send({ message: "Welcome to the QUOTE- O'BRIAN" });
 // });
 
-
+//GET members-only
+router.get('/members-only', ensureUserLoggedIn, function(req, res, next) {
+  res.send({ message: 'Here is your Members Only content from the server ...' })
+})
 
 //GET all data from games table
 router.get("/", async (req, res) => {

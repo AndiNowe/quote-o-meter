@@ -77,11 +77,28 @@ CSS Change:
                 TestData.js => sensitive date, added to gitignore 
 
 
-    Authentication - Client side/hashing
+    Authentication - Client side
+        bcrypt install for hashing
+        https://github.com/kelektiv/node.bcrypt.js#readme
+        npm install bcrypt
         
 
     Authorization -Server side
         JWT install is for token 
-            npm install jose-jwe-jws
+        https://github.com/auth0/node-jsonwebtoken#readme
+            npm install jsonwebtoken
+
 
     Updated README.md for Avatar terms of use by creator
+
+    Added register user, and Login, bcrypt config (added to gitignore) route into userAccounts.js in server routes folder
+
+    Added middleware folder for guards.js file needed to be used in server side routes folder
+        for games.js in order for password hashing
+
+    Client side: 
+        Removed LoginForm from App.js, and replaced with LoginRegView instead for protoyping
+        Added in components folder, new folder LoginReg to keep all components for authentication and authorization for easier integration
+        Added helpers folder inside LoginReg Folder > Api.js, Local.js
+        In LoginReg folder, created: AuthenticatedUser, ErrorView, LoginRegView, MembersOnly, Navbar, and Profile View.
+        

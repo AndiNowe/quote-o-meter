@@ -10,3 +10,8 @@ CREATE TABLE users (
     games_id INT NOT NULL,
     FOREIGN KEY(games_id) REFERENCES games(id) ON DELETE CASCADE
     ); 
+
+INSERT INTO 'users' VALUES
+    ('Akira', 'Mitoshi', 'kikiToro', '', 'ghibi@studio.com', 11)
+    ('Sam', 'Eagle', 'muppetsTreasure', '', 'jim@henson.com', 8)
+    ('Gwendolyn', 'Brienne', 'GOTBadass', '', 'got@hbo.com',10)
