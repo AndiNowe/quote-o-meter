@@ -49,3 +49,5 @@ mysql -u root -p mvp < [C:\Insert here the route of the "init-db.sql" file}
 ## Credits
 _This is a student project that was created at
 [CodeOp](http://codeop.tech), a full stack development bootcamp in Barcelona._
+
+_RTP Character portraits Creators: Caz, KADOKAWA. Please read here for terms of use: [Characters](https://cazwolf.itch.io/)_

@@ -40,3 +40,48 @@ CSS Change:
     Updated form to include avatar icon, also in  QuoteAndChar.js file,
     Added "charIcon" onto "characters" table in "mvp" DB
     
+    Created new file: 
+        AvatarList.js with preloaded imported images from folder "ClientImages".
+            This list is used to map the characters on CharForm.js
+
+    UESR Accounts:
+        Created new table users:
+
+        mysql> desc users;
+    +-----------+--------------+------+-----+---------+----------------+
+    | Field     | Type         | Null | Key | Default | Extra          |
+    +-----------+--------------+------+-----+---------+----------------+
+    | id        | int          | NO   | PRI | NULL    | auto_increment |
+    | firstname | varchar(20)  | NO   |     | NULL    |                |
+    | lastname  | varchar(20)  | NO   |     | NULL    |                |
+    | username  | varchar(20)  | NO   |     | NULL    |                |
+    | password  | varchar(300) | NO   |     | NULL    |                |
+    | email     | varchar(20)  | NO   |     | NULL    |                |
+    | games_id  | int          | NO   | MUL | NULL    |                |
+    +-----------+--------------+------+-----+---------+----------------+
+    7 rows in set (0.00 sec)
+
+    Created new server file in routes: 
+        userAccounts.js
+
+    Created new sql file in model: 
+        usersTables.sql
+
+    Created new folder in client components folder:
+        LoginReg 
+
+            Added new files for this folder:
+                ForgotPW.js
+                LoggedInView.js
+                Registration.js
+                TestData.js => sensitive date, added to gitignore 
+
+
+    Authentication - Client side/hashing
+        
+
+    Authorization -Server side
+        JWT install is for token 
+            npm install jose-jwe-jws
+
+    Updated README.md for Avatar terms of use by creator
