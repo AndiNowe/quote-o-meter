@@ -5,7 +5,7 @@ import React, { /*useEffect,*/ useState } from "react";
 import Routes from './components/Routes';
 //This imports the entire Login/Registration unit to keep
 //it separate from the entire App for easier integration
-import LoginRegView from './components/LoginReg/LoginRegView'
+// import LoginRegView from './components/LoginReg/LoginRegView'
 
 
 function App() {
@@ -40,7 +40,7 @@ function App() {
 
           {/* entire Login/Registration unit to keep
           it separate from the entire App for easier integration */}
-          <LoginRegView />      
+          {/* <LoginRegView />       */}
       
           {/*Routes for all the different views 
           - onGetGame={(g) => getGame2(g)} is a call that comes from the Routes file, which calls getGame2 from up here on App.js.
