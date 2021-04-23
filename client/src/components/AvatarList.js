@@ -4,7 +4,7 @@ import Mage from './ClientImages/Mage.png'
 import Necromancer4 from './ClientImages/Necromancer4.png'
 import Pirate from './ClientImages/Pirate.png'
 import Knight from './ClientImages/Knight.png'
-
+// eslint-disable-next-line
 export default [
 
     Samurai,

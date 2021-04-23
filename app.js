@@ -1,6 +1,4 @@
 //import Dependencies
-
-
 var createError = require("http-errors");
 var express = require("express");
 var path = require("path");
@@ -9,14 +7,10 @@ var logger = require("morgan");
 //DON'T UNCOMMENT THIS
 // var cors = require("cors");
 
-
 //define routes for each table
 var gamesRouter = require('./routes/games');
 var quotesRouter = require('./routes/quotes');
 var charactersRouter = require('./routes/characters');
-//This is newly added
-var authRouter = require('./routes/userAccounts');
-
 
 var app = express();
 
@@ -37,8 +31,6 @@ app.get("/", function(req, res, next) {
 app.use("/games", gamesRouter);
 app.use("/quotes", quotesRouter);
 app.use("/characters", charactersRouter);
-//This is newly added
-app.use("/userAccounts", authRouter)
 
 // Anything that doesn't match the above, send back index.html
 app.get("*", (req, res) => {

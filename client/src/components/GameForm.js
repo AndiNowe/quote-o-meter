@@ -130,6 +130,7 @@ function GameForm(props) {
           <button 
             type="submit"
             className="button"
+            // eslint-disable-next-line
             className="rpgui-button rpgui-center"
           >
             Submit

@@ -26,7 +26,7 @@ const db = require("../model/helper");
 router.use(bodyParser.json());
 
 //Middleware for hashing on client side, registers routes to be protected
-const { ensureUserLoggedIn } = require('../middleware/guards')
+// const { ensureUserLoggedIn } = require('../middleware/guards')
 
 /*******************Routes**************** */
 
@@ -42,9 +42,9 @@ const { ensureUserLoggedIn } = require('../middleware/guards')
 // ------------------------------------This was newly added------------------------------------------
 
 //GET members-only
-router.get('/members-only', ensureUserLoggedIn, function(req, res, next) {
-  res.send({ message: 'Here is your Members Only content from the server ...' })
-})
+// router.get('/members-only', ensureUserLoggedIn, function(req, res, next) {
+//   res.send({ message: 'Here is your Members Only content from the server ...' })
+// })
 
 //---------------------------------------------------------------------------------------------------
 

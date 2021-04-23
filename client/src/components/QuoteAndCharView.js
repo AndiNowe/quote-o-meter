@@ -69,14 +69,14 @@ function QuoteAndChar(props) {
   useEffect(() => {
 
     fetchQuotesByGameId(gameId);
-
+  // eslint-disable-next-line
   }, []);
 
   //same for characters
   useEffect(() => {
 
     fetchCharactersByGameId(gameId);
-   
+   // eslint-disable-next-line
   }, []);
 
   //defined the delete function with quote main id, foreign key doesn't intervene to fetch the particular quote. 
@@ -126,6 +126,7 @@ function QuoteAndChar(props) {
                 id="new-quote"
                 className= "formButton" 
                 type="button"
+                // eslint-disable-next-line
                 className="rpgui-button rpgui-center"
               >
               New quote
